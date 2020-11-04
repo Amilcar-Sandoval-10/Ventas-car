@@ -1,0 +1,11 @@
+C:\Users\josue\Desktop\venta_car\venta_car\Negocio\bin\Debug\Negocio.dll
+C:\Users\josue\Desktop\venta_car\venta_car\Negocio\bin\Debug\Negocio.pdb
+C:\Users\josue\Desktop\venta_car\venta_car\Negocio\bin\Debug\Datos.dll
+C:\Users\josue\Desktop\venta_car\venta_car\Negocio\bin\Debug\Entidad.dll
+C:\Users\josue\Desktop\venta_car\venta_car\Negocio\bin\Debug\Datos.pdb
+C:\Users\josue\Desktop\venta_car\venta_car\Negocio\bin\Debug\Datos.dll.config
+C:\Users\josue\Desktop\venta_car\venta_car\Negocio\bin\Debug\Entidad.pdb
+C:\Users\josue\Desktop\venta_car\venta_car\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\josue\Desktop\venta_car\venta_car\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\josue\Desktop\venta_car\venta_car\Negocio\obj\Debug\Negocio.dll
+C:\Users\josue\Desktop\venta_car\venta_car\Negocio\obj\Debug\Negocio.pdb

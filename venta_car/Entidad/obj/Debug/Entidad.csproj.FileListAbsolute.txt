@@ -1,0 +1,5 @@
+C:\Users\josue\Desktop\venta_car\venta_car\Entidad\bin\Debug\Entidad.dll
+C:\Users\josue\Desktop\venta_car\venta_car\Entidad\bin\Debug\Entidad.pdb
+C:\Users\josue\Desktop\venta_car\venta_car\Entidad\obj\Debug\Entidad.csprojAssemblyReference.cache
+C:\Users\josue\Desktop\venta_car\venta_car\Entidad\obj\Debug\Entidad.dll
+C:\Users\josue\Desktop\venta_car\venta_car\Entidad\obj\Debug\Entidad.pdb

@@ -1,0 +1,102 @@
+create database [Venta_car]
+go
+use Venta_car
+go
+
+
+--- Creando tabla de la empresa ---
+create table Empresa(
+Id_empresa int primary key identity (1,1) not null,
+Nombre nvarchar (50) not null,
+Direccion nvarchar (max) not null,
+Telefono int not null,
+check(Telefono Like'[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')
+)
+go
+
+	Create Table Usuario (
+	Id_Usuario Int Identity (1,1) Not Null,
+	Empleado int foreign key Empleado(Empleado),
+	Usuario Nvarchar (20) Not Null,
+	Contraseña Nvarchar (20) Not Null,
+	Tipo_Usuario Nvarchar (20) Not Null
+	)
+	go
+	Create Table Empleado (
+	Id_Empleado int Identity (1,1) Not Null,
+	Nombre Nvarchar (30) Not Null,
+	Apellidos Nvarchar (30) Not Null,
+	INSS Nvarchar (12) Null,
+	FechaNac Nvarchar (15) Not Null,
+	Genero Char (1) Null,
+	Direccion Nvarchar (Max) Null,
+	Cedula Nvarchar check (16) Null,
+	Telefono Nvarchar (15) Null,
+	EstadoCivil Nvarchar (12) Not Null,
+	Email Nvarchar (80) Null
+	)
+	go
+--- Creando tabla de Inventario ---
+create table Inventario(
+Id_producto int primary key identity (1,1) not null,
+Marca nvarchar(50) not null,
+Modelo nvarchar(50) not null,
+Precio float not null,
+Stock_max int not null,
+Stock_min int not null,
+Stock int not null
+)
+go
+--- Creando tabla de Clientes ---
+create table Clientes
+(
+Id_cliente int primary key identity (1,1) not null,
+No_cedula nvarchar (16) not null,
+check (No_cedula like '[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][A-Z]'),
+Nombre nvarchar (18) not null,
+Apellido nvarchar (30) not null,
+Telefono int not null,
+check (Telefono like '[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9]'),
+Fecha_nacimiento nvarchar(10) not null,
+Direccion nvarchar (MAX) not null,
+Ciudad nvarchar (25) not null,
+Email nvarchar (MAX)not null
+)
+go
+--- Creando tabla de Proveedores ---
+create table Proveedores
+(
+Id_proveedor int primary key  identity (1,1),
+No_cedula nvarchar (16),
+check (No_cedula like '[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][A-Z]'),
+Nombre nvarchar (18),
+Apellido nvarchar (18),
+Telefono_personal int,
+check (Telefono_personal like '[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9]'),
+Telefono_empresa int,
+check (Telefono_empresa like '[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9]')  
+)
+go
+--- Creando tabla de compra ---
+create table Compra(
+Id_compra int primary key identity (1,1) not null,
+Id_proveedor int references Proveedores(Id_proveedor) not null,
+Id_Producto int references Inventario(Id_Producto) not null,
+Fecha_compra date not null,
+Precio_compra float not null,
+Iva float not null,
+Descuento float not null,
+Stock int not null
+)
+go
+--- Creando tabla de ventas ---
+create table Venta(
+Id_venta int primary key identity (1,1) not null,
+Id_producto int references Inventario (Id_producto) not null,
+Id_cliente int references Clientes (Id_cliente) not null,
+Fecha_venta date not null,
+Precio_venta float not null,
+Iva float not null,
+Descuento float not null,
+stock int not null
+)
