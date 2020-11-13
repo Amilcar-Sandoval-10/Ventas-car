@@ -19,7 +19,17 @@ namespace Presentacion
 
         private void btn_Proveedores_Click(object sender, EventArgs e)
         {
-          
+
+            Frm_Proveedores mv = new Frm_Proveedores();
+            mv.Show();
+         
+        }
+
+        private void btn_compra_Click(object sender, EventArgs e)
+        {
+            Frm_Compra filtroProducto = new Frm_Compra();
+            filtroProducto.ShowDialog();
+            this.Hide();
         }
     }
 }

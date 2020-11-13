@@ -48,6 +48,7 @@ namespace Presentacion
 
         private void Btb_Quitar_Click(object sender, EventArgs e)
         {
+
             try
             {
                 if (dgvCompra.SelectedRows.Count > 0)
@@ -60,7 +61,7 @@ namespace Presentacion
 
                         E_Factura.Id_compra = Convert.ToInt32(txtnombre.Tag.ToString());
 
-                        if (Factura.Eliminar (E_Factura))
+                        if (Factura.Eliminar(E_Factura))
                         {
                             MessageBox.Show("Se Elimino Correctamente", "Compra", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             CargarGrid();
@@ -72,6 +73,7 @@ namespace Presentacion
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void btn_Limpiar_Click(object sender, EventArgs e)
@@ -86,6 +88,7 @@ namespace Presentacion
         {
             Global.BotonesAccion(btn_Nuevo, btn_añadir, Btn_quitar, btnBuscarProd, btn_Cancelar, btn_Limpiar, btn_Cancelar.Text );
             btnBuscarProd.Enabled = false;
+            btnBuscarProveedor.Enabled = false;
             nudCantidad.Enabled = false;
             Global.Desabilitar(paneldetalle);
             Global.Desabilitar(panelcompra);
@@ -134,7 +137,6 @@ namespace Presentacion
                 E_Compra Compra = new E_Compra();
                 Compra.Id_proveedor = Convert.ToInt32(txtnombre.Tag.ToString());
                 Compra.Id_producto = Convert.ToInt32(txtMarca.Tag.ToString());
-             //Aca hay un error al obtener este id, revisa, voy a comer
                 Compra.Fecha_compra = txtfecha.Text.ToString();
                 Compra.Precio_compra = Convert.ToDouble(txtPrecio.Text.ToString());
                 Compra.Cantidad = Convert.ToInt32(nudCantidad.Value.ToString());
@@ -176,7 +178,14 @@ namespace Presentacion
 
         private void txtnombre_TextChanged(object sender, EventArgs e)
         {
-
+            if (txtnombre.Text == "")
+            {
+                btn_añadir.Enabled = false;
+            }
+            else
+            {
+                btn_añadir.Enabled = true;
+            }
         }
     }
 }

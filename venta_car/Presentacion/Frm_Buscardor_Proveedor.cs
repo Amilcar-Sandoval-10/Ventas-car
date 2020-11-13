@@ -78,6 +78,7 @@ namespace Presentacion
         }
 
 
+
         private Frm_Compra Padre;
         public Frm_Buscardor_Proveedor(Frm_Compra parametro)
         {

@@ -34,6 +34,8 @@ namespace Presentacion
             Padre = parametro;
         }
 
+
+
         private void CargarGrid()
         {
             try

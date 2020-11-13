@@ -43,9 +43,7 @@
             this.txttelefono = new System.Windows.Forms.TextBox();
             this.txtnombre = new System.Windows.Forms.TextBox();
             this.paneldetalle = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.nudCantidad = new System.Windows.Forms.NumericUpDown();
-            this.txtfecha = new System.Windows.Forms.TextBox();
             this.btn_Factura = new System.Windows.Forms.Button();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -67,6 +65,8 @@
             this.txtSubtotal = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtfecha = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCompra)).BeginInit();
             this.panelcompra.SuspendLayout();
             this.paneldetalle.SuspendLayout();
@@ -231,9 +231,7 @@
             // 
             // paneldetalle
             // 
-            this.paneldetalle.Controls.Add(this.label5);
             this.paneldetalle.Controls.Add(this.nudCantidad);
-            this.paneldetalle.Controls.Add(this.txtfecha);
             this.paneldetalle.Controls.Add(this.btn_Factura);
             this.paneldetalle.Controls.Add(this.txtPrecio);
             this.paneldetalle.Controls.Add(this.label7);
@@ -248,47 +246,24 @@
             this.paneldetalle.Controls.Add(this.btnBuscarProd);
             this.paneldetalle.Location = new System.Drawing.Point(442, 193);
             this.paneldetalle.Name = "paneldetalle";
-            this.paneldetalle.Size = new System.Drawing.Size(373, 228);
+            this.paneldetalle.Size = new System.Drawing.Size(373, 188);
             this.paneldetalle.TabIndex = 2;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(20, 190);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
-            this.label5.TabIndex = 63;
-            this.label5.Text = "Fecha:";
             // 
             // nudCantidad
             // 
             this.nudCantidad.BackColor = System.Drawing.SystemColors.Window;
             this.nudCantidad.Enabled = false;
             this.nudCantidad.Font = new System.Drawing.Font("Georgia", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudCantidad.Location = new System.Drawing.Point(287, 184);
+            this.nudCantidad.Location = new System.Drawing.Point(287, 149);
             this.nudCantidad.Name = "nudCantidad";
             this.nudCantidad.Size = new System.Drawing.Size(38, 22);
             this.nudCantidad.TabIndex = 67;
             this.nudCantidad.ValueChanged += new System.EventHandler(this.nudCantidad_ValueChanged);
             // 
-            // txtfecha
-            // 
-            this.txtfecha.Enabled = false;
-            this.txtfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.txtfecha.Location = new System.Drawing.Point(82, 190);
-            this.txtfecha.Margin = new System.Windows.Forms.Padding(2);
-            this.txtfecha.Name = "txtfecha";
-            this.txtfecha.Size = new System.Drawing.Size(100, 20);
-            this.txtfecha.TabIndex = 62;
-            this.txtfecha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // btn_Factura
             // 
             this.btn_Factura.Enabled = false;
-            this.btn_Factura.Location = new System.Drawing.Point(250, 126);
+            this.btn_Factura.Location = new System.Drawing.Point(250, 101);
             this.btn_Factura.Name = "btn_Factura";
             this.btn_Factura.Size = new System.Drawing.Size(75, 23);
             this.btn_Factura.TabIndex = 43;
@@ -313,7 +288,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(225, 190);
+            this.label7.Location = new System.Drawing.Point(225, 155);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 13);
@@ -346,7 +321,7 @@
             // 
             // Btn_quitar
             // 
-            this.Btn_quitar.Location = new System.Drawing.Point(250, 75);
+            this.Btn_quitar.Location = new System.Drawing.Point(250, 62);
             this.Btn_quitar.Name = "Btn_quitar";
             this.Btn_quitar.Size = new System.Drawing.Size(75, 23);
             this.Btn_quitar.TabIndex = 44;
@@ -446,7 +421,8 @@
             // 
             // txtDescuento
             // 
-            this.txtDescuento.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescuento.Enabled = false;
+            this.txtDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescuento.Location = new System.Drawing.Point(181, 62);
             this.txtDescuento.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescuento.Name = "txtDescuento";
@@ -470,7 +446,7 @@
             // Txttotal2
             // 
             this.Txttotal2.Enabled = false;
-            this.Txttotal2.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Txttotal2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txttotal2.Location = new System.Drawing.Point(493, 59);
             this.Txttotal2.Margin = new System.Windows.Forms.Padding(2);
             this.Txttotal2.Name = "Txttotal2";
@@ -494,7 +470,7 @@
             // TxtIVA
             // 
             this.TxtIVA.Enabled = false;
-            this.TxtIVA.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtIVA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TxtIVA.Location = new System.Drawing.Point(488, 13);
             this.TxtIVA.Margin = new System.Windows.Forms.Padding(2);
             this.TxtIVA.Name = "TxtIVA";
@@ -506,7 +482,7 @@
             // txtSubtotal
             // 
             this.txtSubtotal.Enabled = false;
-            this.txtSubtotal.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSubtotal.Location = new System.Drawing.Point(219, 16);
             this.txtSubtotal.Margin = new System.Windows.Forms.Padding(2);
             this.txtSubtotal.Name = "txtSubtotal";
@@ -539,11 +515,36 @@
             this.label9.TabIndex = 55;
             this.label9.Text = "SubTotal:";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(452, 401);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.TabIndex = 65;
+            this.label5.Text = "Fecha:";
+            // 
+            // txtfecha
+            // 
+            this.txtfecha.Enabled = false;
+            this.txtfecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtfecha.Location = new System.Drawing.Point(514, 401);
+            this.txtfecha.Margin = new System.Windows.Forms.Padding(2);
+            this.txtfecha.Name = "txtfecha";
+            this.txtfecha.Size = new System.Drawing.Size(100, 20);
+            this.txtfecha.TabIndex = 64;
+            this.txtfecha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // Frm_Compra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(857, 570);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtfecha);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.paneldetalle);
             this.Controls.Add(this.panelcompra);
@@ -560,6 +561,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -591,8 +593,6 @@
         public System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.NumericUpDown nudCantidad;
-        private System.Windows.Forms.Label label5;
-        public System.Windows.Forms.TextBox txtfecha;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.TextBox txtDescuento;
@@ -603,5 +603,7 @@
         private System.Windows.Forms.TextBox txtSubtotal;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.TextBox txtfecha;
     }
 }

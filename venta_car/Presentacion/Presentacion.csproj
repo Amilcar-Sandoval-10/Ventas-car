@@ -52,6 +52,18 @@
     <Compile Include="Frm_Buscador_Inventario.Designer.cs">
       <DependentUpon>Frm_Buscador_Inventario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Buscador_Producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Buscador_Producto.Designer.cs">
+      <DependentUpon>Frm_Buscador_Producto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_Buscardor_Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Buscardor_Clientes.Designer.cs">
+      <DependentUpon>Frm_Buscardor_Clientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Buscardor_Proveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,11 +94,23 @@
     <Compile Include="Frm_Proveedores.Designer.cs">
       <DependentUpon>Frm_Proveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_Ventas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_Ventas.Designer.cs">
+      <DependentUpon>Frm_Ventas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Global.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Frm_Buscador_Inventario.resx">
       <DependentUpon>Frm_Buscador_Inventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Buscador_Producto.resx">
+      <DependentUpon>Frm_Buscador_Producto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Buscardor_Clientes.resx">
+      <DependentUpon>Frm_Buscardor_Clientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Buscardor_Proveedor.resx">
       <DependentUpon>Frm_Buscardor_Proveedor.cs</DependentUpon>
@@ -102,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Proveedores.resx">
       <DependentUpon>Frm_Proveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_Ventas.resx">
+      <DependentUpon>Frm_Ventas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
