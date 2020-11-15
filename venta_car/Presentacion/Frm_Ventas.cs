@@ -47,8 +47,10 @@ namespace Presentacion
             btnBuscarCliente.Enabled = true;
             nudCantidad.Enabled = true;
             btnBuscarProd.Enabled = true;
+            Btn_quitar.Enabled = false;
             Global.Habilitar(paneldetalle);
             Global.Habilitar(panelcompra);
+
             txtfecha.Text = Fecha.ToShortDateString();
         }
 
@@ -58,6 +60,7 @@ namespace Presentacion
             btnBuscarProd.Enabled = false;
             btnBuscarCliente.Enabled = false;
             nudCantidad.Enabled = false;
+            Btn_quitar.Enabled = true;
             Global.Desabilitar(paneldetalle);
             Global.Desabilitar(panelcompra);
             Global.Limpiar(paneldetalle);
@@ -67,7 +70,7 @@ namespace Presentacion
 
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
-            btnBuscarProd.Enabled = false;
+          
             Global.Limpiar(paneldetalle);
             Global.Limpiar(panelcompra);
             Global.Limpiar(panel1);
@@ -120,6 +123,18 @@ namespace Presentacion
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+            Global.BotonesAccion(btn_Nuevo, btn_añadir, Btn_quitar, btnBuscarProd, btn_Cancelar, btn_Limpiar, btn_Cancelar.Text);
+            btnBuscarProd.Enabled = false;
+            btnBuscarCliente.Enabled = false;
+            nudCantidad.Enabled = false;
+            Btn_quitar.Enabled = true;
+            Global.Desabilitar(paneldetalle);
+            Global.Desabilitar(panelcompra);
+            Global.Limpiar(paneldetalle);
+            Global.Limpiar(panelcompra);
+            Global.Limpiar(panel1);
+
+
         }
 
         private void Btn_quitar_Click(object sender, EventArgs e)
@@ -162,6 +177,11 @@ namespace Presentacion
             double Descuento = Convert.ToDouble(txtDescuento.Text);
             double Total = (subtotal - Descuento);
             Txttotal2.Text = Total.ToString();
+        }
+
+        private void Frm_Ventas_Load(object sender, EventArgs e)
+        {
+            CargarGrid();
         }
     }
 }

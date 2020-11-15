@@ -98,6 +98,7 @@ namespace Presentacion
             else
             {
                 txtid.Enabled = false;
+                txtid.Clear();
             }
         }
 
@@ -111,6 +112,7 @@ namespace Presentacion
             else
             {
                 txtNombre.Enabled = false;
+                txtNombre.Clear();
             }
         }
 
@@ -123,6 +125,7 @@ namespace Presentacion
             else
             {
                 txtCedula.Enabled = false;
+                txtCedula.Clear();
             }
 
         }

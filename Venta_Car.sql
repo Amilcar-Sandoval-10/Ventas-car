@@ -76,7 +76,7 @@ create table Proveedores
 (
 Id_proveedor int primary key  identity (1,1)not null,
 No_cedula nvarchar (16)not null,
-check (No_cedula like '[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][A-Z]'),
+--check (No_cedula like '[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][A-Z]'),
 Nombre nvarchar (18) not null,
 Apellido nvarchar (18) not null,
 Telefono_personal int not null,

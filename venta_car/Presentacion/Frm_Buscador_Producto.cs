@@ -100,6 +100,7 @@ namespace Presentacion
             else
             {
                 txtid.Enabled = false;
+                txtid.Clear();
             }
         }
 
@@ -112,6 +113,7 @@ namespace Presentacion
             else
             {
                 txtmodelo.Enabled = false;
+                txtmodelo.Clear();
             }
         }
 
@@ -124,6 +126,7 @@ namespace Presentacion
             else
             {
                 txtmarca.Enabled = false;
+                txtmarca.Clear();
             }
         }
 
@@ -137,6 +140,11 @@ namespace Presentacion
             Padre.txtPrecio.Text = dgvFiltroInventario.CurrentRow.Cells["Precio"].Value.ToString();
 
             this.Close();
+        }
+
+        private void txtmarca_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

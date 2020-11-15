@@ -112,6 +112,7 @@
             this.txt_Nombres.Name = "txt_Nombres";
             this.txt_Nombres.Size = new System.Drawing.Size(100, 20);
             this.txt_Nombres.TabIndex = 2;
+            this.txt_Nombres.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Nombres_KeyPress);
             // 
             // label4
             // 
@@ -129,6 +130,7 @@
             this.txt_Apellidos.Name = "txt_Apellidos";
             this.txt_Apellidos.Size = new System.Drawing.Size(100, 20);
             this.txt_Apellidos.TabIndex = 3;
+            this.txt_Apellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Apellidos_KeyPress);
             // 
             // label3
             // 
@@ -146,6 +148,7 @@
             this.txt_Telefono_personal.Name = "txt_Telefono_personal";
             this.txt_Telefono_personal.Size = new System.Drawing.Size(100, 20);
             this.txt_Telefono_personal.TabIndex = 3;
+            this.txt_Telefono_personal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Telefono_personal_KeyPress);
             // 
             // label2
             // 
@@ -163,6 +166,7 @@
             this.txt_Telefono_empresa.Name = "txt_Telefono_empresa";
             this.txt_Telefono_empresa.Size = new System.Drawing.Size(100, 20);
             this.txt_Telefono_empresa.TabIndex = 4;
+            this.txt_Telefono_empresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Telefono_empresa_KeyPress);
             // 
             // label1
             // 
@@ -175,7 +179,6 @@
             // 
             // btn_Eliminar
             // 
-            this.btn_Eliminar.Enabled = false;
             this.btn_Eliminar.Location = new System.Drawing.Point(609, 328);
             this.btn_Eliminar.Name = "btn_Eliminar";
             this.btn_Eliminar.Size = new System.Drawing.Size(75, 23);
@@ -218,7 +221,6 @@
             // 
             // btn_Modificar
             // 
-            this.btn_Modificar.Enabled = false;
             this.btn_Modificar.Location = new System.Drawing.Point(218, 328);
             this.btn_Modificar.Name = "btn_Modificar";
             this.btn_Modificar.Size = new System.Drawing.Size(75, 23);
@@ -245,7 +247,6 @@
             this.dgvproveedor.Name = "dgvproveedor";
             this.dgvproveedor.Size = new System.Drawing.Size(240, 199);
             this.dgvproveedor.TabIndex = 17;
-            this.dgvproveedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvproveedor_CellContentClick);
             // 
             // Frm_Proveedores
             // 

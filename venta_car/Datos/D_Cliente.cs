@@ -19,7 +19,7 @@ namespace Datos
                 SqlConnection Conexion = new SqlConnection(Properties.Settings.Default.Cadena_conexion);
                 SqlCommand Comando = new SqlCommand();
                 Comando.CommandType = CommandType.StoredProcedure;
-                Comando.CommandText = "Buscar_cliente";
+                Comando.CommandText = "MostrarClientes";
                 Comando.Connection = Conexion;
                 Conexion.Open();
                 SqlDataReader leer = Comando.ExecuteReader();

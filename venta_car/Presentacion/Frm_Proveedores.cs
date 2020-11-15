@@ -50,70 +50,86 @@ namespace Presentacion
             Global.BotonesAccion(btn_Nuevo, btn_Guardar, btn_Modificar, btn_Eliminar, btn_Cancelar, btn_Limpiar, btn_Nuevo.Text);
             Global.Habilitar(PanelInventario);
             txt_Cedula.Focus();
+            btn_Eliminar.Enabled = false;
+            btn_Modificar.Enabled = false;
         }
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
             Global.BotonesAccion(btn_Nuevo, btn_Guardar, btn_Modificar, btn_Eliminar, btn_Cancelar, btn_Limpiar, btn_Nuevo.Text);
             Global.Desabilitar(PanelInventario);
+            Global.Limpiar(PanelInventario);
+            btn_Guardar.Enabled = false;
+            btn_Nuevo.Enabled = true;
+            btn_Limpiar.Enabled = false;
+            btn_Cancelar.Enabled = false;
         }
 
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
             Global.Limpiar(PanelInventario);
+         
         }
 
         private void btn_Guardar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                N_Proveedores nProveedor = new N_Proveedores();
-                if (Modificar)
+         
+                try
                 {
-                    E_Proveedores Modificar_Proveedores = new E_Proveedores();
-
-                    Modificar_Proveedores.Id_proveedor = txt_Nombres.Tag.ToString();
-                    Modificar_Proveedores.No_cedula = txt_Cedula.Text;
-                    Modificar_Proveedores.Nombre = txt_Nombres.Text;
-                    Modificar_Proveedores.Apellido = txt_Apellidos.Text;
-                    Modificar_Proveedores.Telefono_personal = Convert.ToInt32(txt_Telefono_personal.Text);
-                    Modificar_Proveedores.Telefono_empresa = Convert.ToInt32(txt_Telefono_empresa.Text);
-                    Modificar_Proveedores.Email = txt_Email.Text;
-                    
-                    if (nProveedor.Modificar(Modificar_Proveedores))
+                    N_Proveedores nInventario = new N_Proveedores();
+                    if (Modificar)
                     {
-                        MessageBox.Show("Se Modifico exitosamente", "Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        CargarGrid();
-                        Global.Limpiar(PanelInventario);
-                        Modificar = false;
+                        E_Proveedores Modificar_Proveedores = new E_Proveedores();
+                        Modificar_Proveedores.Id_proveedor = txt_Nombres.Tag.ToString();
+                        Modificar_Proveedores.No_cedula = txt_Cedula.Text;
+                        Modificar_Proveedores.Nombre = txt_Nombres.Text;
+                        Modificar_Proveedores.Apellido = txt_Apellidos.Text;
+                        Modificar_Proveedores.Telefono_personal = Convert.ToInt32(txt_Telefono_personal.Text);
+                        Modificar_Proveedores.Telefono_empresa = Convert.ToInt32(txt_Telefono_empresa.Text);
+                        Modificar_Proveedores.Email = txt_Apellidos.Text;
+                        if (nInventario.Modificar(Modificar_Proveedores))
+                        {
+                            MessageBox.Show("Se Modifico exitosamente", "Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            CargarGrid();
+                            Global.Limpiar(PanelInventario);
+                            Modificar = false;
+                        }
                     }
-                }
-                else
-                {
+                    else
+                    {
                         E_Proveedores GuardarProveedor = new E_Proveedores();
-                        GuardarProveedor.Id_proveedor = txt_Nombres.Tag.ToString();
                         GuardarProveedor.No_cedula = txt_Cedula.Text;
                         GuardarProveedor.Nombre = txt_Nombres.Text;
                         GuardarProveedor.Apellido = txt_Apellidos.Text;
                         GuardarProveedor.Telefono_personal = Convert.ToInt32(txt_Telefono_personal.Text);
                         GuardarProveedor.Telefono_empresa = Convert.ToInt32(txt_Telefono_empresa.Text);
                         GuardarProveedor.Email = txt_Email.Text;
-                  
-                        if (nProveedor.Guardar(GuardarProveedor))
+                        if (nInventario.Guardar(GuardarProveedor))
                         {
                             MessageBox.Show("Se guardo exitosamente", "Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             CargarGrid();
                             Global.Limpiar(PanelInventario);
-                            Global.BotonesAccion(btn_Nuevo, btn_Guardar, btn_Modificar, btn_Eliminar, btn_Cancelar, btn_Limpiar, btn_Nuevo.Text);
+                            //Global.BotonesAccion(btnNuevo, BtnGuardar, btnModificar, btnBuscar, btnCancelar, btnLimpiar, BtnGuardar.Text);
                         }
-                }
-            }
-            catch (Exception ex)
-            {
+                    }
 
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                    Global.BotonesAccion(btn_Nuevo, btn_Guardar, btn_Modificar, btn_Eliminar, btn_Cancelar, btn_Limpiar, btn_Nuevo.Text);
+                    Global.Desabilitar(PanelInventario);
+                    Global.Limpiar(PanelInventario);
+                    btn_Guardar.Enabled = false;
+                    btn_Nuevo.Enabled = true;
+                    btn_Limpiar.Enabled = false;
+                    btn_Cancelar.Enabled = false;
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
         }
+            
 
         private void btn_Modificar_Click(object sender, EventArgs e)
         {
@@ -137,6 +153,11 @@ namespace Presentacion
 
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            Global.BotonesAccion(btn_Nuevo, btn_Guardar, btn_Modificar, btn_Eliminar, btn_Cancelar, btn_Limpiar, btn_Nuevo.Text);
+            Global.Habilitar(PanelInventario);
+            txt_Cedula.Focus();
+            btn_Eliminar.Enabled = false;
         }
 
         private void btn_Eliminar_Click(object sender, EventArgs e)
@@ -146,14 +167,14 @@ namespace Presentacion
                 if (dgvproveedor.SelectedRows.Count > 0)
                 {
                     txt_Nombres.Tag = dgvproveedor.CurrentRow.Cells["Id_proveedor"].Value.ToString();
-                    if (MessageBox.Show("Desea eliminar la Compra seleccionada", "Proveedor", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("Desea eliminar el proveedor seleccionada", "Proveedor", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        N_Compra Factura = new N_Compra();
-                        E_Compra E_Factura = new E_Compra();
+                        N_Proveedores Eliminar = new N_Proveedores();
+                        E_Proveedores E_Eliminar = new E_Proveedores();
 
-                        E_Factura.Id_compra = Convert.ToInt32(txt_Nombres.Tag.ToString());
+                        E_Eliminar.Id_proveedor = txt_Nombres.Tag.ToString();
 
-                        if (Factura.Eliminar(E_Factura))
+                        if (Eliminar.Eliminar(E_Eliminar))
                         {
                             MessageBox.Show("Se Elimino Correctamente", "Proveedor", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             CargarGrid();
@@ -167,9 +188,91 @@ namespace Presentacion
             }
         }
 
-        private void dgvproveedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+   
 
+
+
+        private void txt_Telefono_personal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
+
+        private void txt_Nombres_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_Apellidos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txt_Telefono_empresa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+       
+        
     }
 }

@@ -57,6 +57,7 @@
             this.txtmarca.Name = "txtmarca";
             this.txtmarca.Size = new System.Drawing.Size(90, 23);
             this.txtmarca.TabIndex = 49;
+            this.txtmarca.TextChanged += new System.EventHandler(this.txtmarca_TextChanged);
             // 
             // cbmarca
             // 

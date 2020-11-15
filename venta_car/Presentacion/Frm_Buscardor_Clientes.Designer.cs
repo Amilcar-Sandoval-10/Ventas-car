@@ -68,6 +68,7 @@
             this.cbid.TabIndex = 47;
             this.cbid.Text = "Id";
             this.cbid.UseVisualStyleBackColor = true;
+            this.cbid.CheckedChanged += new System.EventHandler(this.cbid_CheckedChanged);
             // 
             // txtCedula
             // 
@@ -90,6 +91,7 @@
             this.cbCedula.TabIndex = 45;
             this.cbCedula.Text = "Cedula";
             this.cbCedula.UseVisualStyleBackColor = true;
+            this.cbCedula.CheckedChanged += new System.EventHandler(this.cbCedula_CheckedChanged);
             // 
             // txtNombre
             // 
@@ -124,6 +126,7 @@
             this.cbNombre.TabIndex = 42;
             this.cbNombre.Text = "Nombre";
             this.cbNombre.UseVisualStyleBackColor = true;
+            this.cbNombre.CheckedChanged += new System.EventHandler(this.cbNombre_CheckedChanged);
             // 
             // Frm_Buscardor_Clientes
             // 

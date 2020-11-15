@@ -34,6 +34,14 @@ namespace Presentacion
             }
         }
 
+
+        private void Frm_Buscardor_Clientes_Load(object sender, EventArgs e)
+        {
+            CargarGrid();
+        }
+
+
+
         private void btnFiltroCliente_Click(object sender, EventArgs e)
         {
             try
@@ -79,9 +87,46 @@ namespace Presentacion
         }
 
 
-        private void Frm_Buscardor_Clientes_Load(object sender, EventArgs e)
+
+        private void cbid_CheckedChanged(object sender, EventArgs e)
         {
-            CargarGrid();
+            if (cbid.Checked == true)
+            {
+                txtid.Enabled = true;
+            }
+            else
+            {
+                txtid.Enabled = false;
+                txtid.Clear();
+            }
+        }
+
+        private void cbNombre_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (cbNombre.Checked == true)
+            {
+                txtNombre.Enabled = true;
+            }
+            else
+            {
+                txtNombre.Enabled = false;
+                txtNombre.Clear();
+            }
+        }
+
+        private void cbCedula_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (cbCedula.Checked == true)
+            {
+                txtCedula.Enabled = true;
+            }
+            else
+            {
+                txtCedula.Enabled = false;
+                txtCedula.Clear();
+            }
         }
 
 
@@ -95,5 +140,8 @@ namespace Presentacion
 
             this.Close();
         }
+
+
+
     }
 }

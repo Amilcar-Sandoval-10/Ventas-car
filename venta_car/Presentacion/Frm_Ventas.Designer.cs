@@ -576,6 +576,7 @@
             this.Controls.Add(this.dgvVenta);
             this.Name = "Frm_Ventas";
             this.Text = "Frm_Ventas";
+            this.Load += new System.EventHandler(this.Frm_Ventas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).EndInit();
             this.paneldetalle.ResumeLayout(false);
             this.paneldetalle.PerformLayout();

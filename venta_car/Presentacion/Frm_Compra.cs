@@ -39,9 +39,10 @@ namespace Presentacion
             btnBuscarProveedor.Enabled = true;
             nudCantidad.Enabled = true;
             btnBuscarProd.Enabled = true;
+            Btn_quitar.Enabled = false;
             Global.Habilitar(paneldetalle);
             Global.Habilitar(panelcompra);
-            //Global.Habilitar(panelc);
+            
 
             txtfecha.Text = Fecha.ToShortDateString();
         }
@@ -90,6 +91,7 @@ namespace Presentacion
             btnBuscarProd.Enabled = false;
             btnBuscarProveedor.Enabled = false;
             nudCantidad.Enabled = false;
+            Btn_quitar.Enabled = true;
             Global.Desabilitar(paneldetalle);
             Global.Desabilitar(panelcompra);
             Global.Limpiar(paneldetalle);
@@ -132,6 +134,7 @@ namespace Presentacion
         private void btn_añadir_Click(object sender, EventArgs e)
         {
 
+
             try
             {
                 E_Compra Compra = new E_Compra();
@@ -159,6 +162,18 @@ namespace Presentacion
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+            Global.BotonesAccion(btn_Nuevo, btn_añadir, Btn_quitar, btnBuscarProd, btn_Cancelar, btn_Limpiar, btn_Cancelar.Text);
+            btnBuscarProd.Enabled = false;
+            btnBuscarProveedor.Enabled = false;
+            nudCantidad.Enabled = false;
+            Btn_quitar.Enabled = true;
+            Global.Desabilitar(paneldetalle);
+            Global.Desabilitar(panelcompra);
+            Global.Limpiar(paneldetalle);
+            Global.Limpiar(panelcompra);
+            Global.Limpiar(panel1);
+
+
         }
 
         private void nudCantidad_ValueChanged(object sender, EventArgs e)
@@ -178,14 +193,7 @@ namespace Presentacion
 
         private void txtnombre_TextChanged(object sender, EventArgs e)
         {
-            if (txtnombre.Text == "")
-            {
-                btn_añadir.Enabled = false;
-            }
-            else
-            {
-                btn_añadir.Enabled = true;
-            }
+         
         }
     }
 }
