@@ -19,10 +19,27 @@ namespace Presentacion
             InitializeComponent();
         }
 
-        private void txttelefono_TextChanged(object sender, EventArgs e)
-        {
 
+        private void CargarGrid()
+        {
+            try
+            {
+                N_Compra N_Compra = new N_Compra();
+                dgvCompra.DataSource = N_Compra.ListaFacturaCompra();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
+
+
+        private void Frm_Compra_Load(object sender, EventArgs e)
+        {
+            CargarGrid();
+        }
+
 
         private void btnBuscarProveedor_Click(object sender, EventArgs e)
         {
@@ -32,7 +49,8 @@ namespace Presentacion
 
     
         DateTime Fecha = DateTime.Now;
-        private void btn_Nuevo_Click(object sender, EventArgs e)
+
+        private void btn_Nuevo_Click_1(object sender, EventArgs e)
         {
             Global.BotonesAccion(btn_Nuevo, btn_añadir, Btn_quitar, btnBuscarProd, btn_Cancelar, btn_Limpiar, btn_Nuevo.Text);
             btn_añadir.Enabled = true;
@@ -42,12 +60,80 @@ namespace Presentacion
             Btn_quitar.Enabled = false;
             Global.Habilitar(paneldetalle);
             Global.Habilitar(panelcompra);
-            
+
 
             txtfecha.Text = Fecha.ToShortDateString();
         }
 
-        private void Btb_Quitar_Click(object sender, EventArgs e)
+        private void btn_Cancelar_Click_1(object sender, EventArgs e)
+        {
+            Global.BotonesAccion(btn_Nuevo, btn_añadir, Btn_quitar, btnBuscarProd, btn_Cancelar, btn_Limpiar, btn_Cancelar.Text);
+            btnBuscarProd.Enabled = false;
+            btnBuscarProveedor.Enabled = false;
+            nudCantidad.Enabled = false;
+            Btn_quitar.Enabled = true;
+            Global.Desabilitar(paneldetalle);
+            Global.Desabilitar(panelcompra);
+            Global.Limpiar(paneldetalle);
+            Global.Limpiar(panelcompra);
+            Global.Limpiar(panel1);
+        }
+
+
+        private void btn_Limpiar_Click_1(object sender, EventArgs e)
+        {
+            btnBuscarProd.Enabled = false;
+            Global.Limpiar(paneldetalle);
+            Global.Limpiar(panelcompra);
+            Global.Limpiar(panel1);
+        }
+
+        private void btn_añadir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                E_Compra Compra = new E_Compra();
+                Compra.Id_proveedor = Convert.ToInt32(txtnombre.Tag.ToString());
+                Compra.Id_producto = Convert.ToInt32(txtMarca.Tag.ToString());
+                Compra.Fecha_compra = txtfecha.Text.ToString();
+                Compra.Precio_compra = Convert.ToDouble(txtPrecio.Text.ToString());
+                Compra.Cantidad = Convert.ToInt32(nudCantidad.Value.ToString());
+                Compra.Subtotal = Convert.ToDouble(txtSubtotal.Text);
+                Compra.Iva = Convert.ToDouble(TxtIVA.Text);
+                Compra.Descuento = Convert.ToDouble(txtDescuento.Text);
+                Compra.Stock = Convert.ToDouble(Txttotal2.Text);
+                N_Compra n_FacturaCliente = new N_Compra();
+                if (n_FacturaCliente.Guardar(Compra))
+                {
+                    MessageBox.Show("Se guardo exitosamente", "Compra", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    CargarGrid();
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            Global.BotonesAccion(btn_Nuevo, btn_añadir, Btn_quitar, btnBuscarProd, btn_Cancelar, btn_Limpiar, btn_Cancelar.Text);
+            btnBuscarProd.Enabled = false;
+            btnBuscarProveedor.Enabled = false;
+            nudCantidad.Enabled = false;
+            Btn_quitar.Enabled = true;
+            Global.Desabilitar(paneldetalle);
+            Global.Desabilitar(panelcompra);
+            Global.Limpiar(paneldetalle);
+            Global.Limpiar(panelcompra);
+            Global.Limpiar(panel1);
+
+        }
+
+
+
+
+        private void Btn_quitar_Click(object sender, EventArgs e)
         {
 
             try
@@ -74,30 +160,9 @@ namespace Presentacion
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
-        private void btn_Limpiar_Click(object sender, EventArgs e)
-        {
-            btnBuscarProd.Enabled = false;
-            Global.Limpiar(paneldetalle);
-            Global.Limpiar(panelcompra);
-            Global.Limpiar(panel1);
-        }
 
-        private void btn_Cancelar_Click(object sender, EventArgs e)
-        {
-            Global.BotonesAccion(btn_Nuevo, btn_añadir, Btn_quitar, btnBuscarProd, btn_Cancelar, btn_Limpiar, btn_Cancelar.Text );
-            btnBuscarProd.Enabled = false;
-            btnBuscarProveedor.Enabled = false;
-            nudCantidad.Enabled = false;
-            Btn_quitar.Enabled = true;
-            Global.Desabilitar(paneldetalle);
-            Global.Desabilitar(panelcompra);
-            Global.Limpiar(paneldetalle);
-            Global.Limpiar(panelcompra);
-            Global.Limpiar(panel1);
-        }
 
         private void btnBuscarProd_Click(object sender, EventArgs e)
         {
@@ -105,76 +170,9 @@ namespace Presentacion
             filtroProducto.ShowDialog();
         }
 
-        private void txtProducto_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        private void CargarGrid()
-        {
-            try
-            {
-                N_Compra N_Compra = new N_Compra();
-                dgvCompra.DataSource = N_Compra.ListaFacturaCompra();
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
-
-        private void Frm_Compra_Load(object sender, EventArgs e)
-        {
-            CargarGrid();
-        }
-
-       
-        private void btn_añadir_Click(object sender, EventArgs e)
-        {
-
-
-            try
-            {
-                E_Compra Compra = new E_Compra();
-                Compra.Id_proveedor = Convert.ToInt32(txtnombre.Tag.ToString());
-                Compra.Id_producto = Convert.ToInt32(txtMarca.Tag.ToString());
-                Compra.Fecha_compra = txtfecha.Text.ToString();
-                Compra.Precio_compra = Convert.ToDouble(txtPrecio.Text.ToString());
-                Compra.Cantidad = Convert.ToInt32(nudCantidad.Value.ToString());
-                Compra.Subtotal = Convert.ToDouble(txtSubtotal.Text);
-                Compra.Iva = Convert.ToDouble(TxtIVA.Text);
-                Compra.Descuento = Convert.ToDouble(txtDescuento.Text);
-                Compra.Stock = Convert.ToDouble(Txttotal2.Text);
-                N_Compra n_FacturaCliente = new N_Compra();
-                if (n_FacturaCliente.Guardar(Compra))
-                {
-                    MessageBox.Show("Se guardo exitosamente", "Compra", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    CargarGrid();
-                    
-
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            Global.BotonesAccion(btn_Nuevo, btn_añadir, Btn_quitar, btnBuscarProd, btn_Cancelar, btn_Limpiar, btn_Cancelar.Text);
-            btnBuscarProd.Enabled = false;
-            btnBuscarProveedor.Enabled = false;
-            nudCantidad.Enabled = false;
-            Btn_quitar.Enabled = true;
-            Global.Desabilitar(paneldetalle);
-            Global.Desabilitar(panelcompra);
-            Global.Limpiar(paneldetalle);
-            Global.Limpiar(panelcompra);
-            Global.Limpiar(panel1);
-
-
-        }
+   
+ 
 
         private void nudCantidad_ValueChanged(object sender, EventArgs e)
         {
@@ -191,9 +189,9 @@ namespace Presentacion
             Txttotal2.Text = Total.ToString();
         }
 
-        private void txtnombre_TextChanged(object sender, EventArgs e)
-        {
-         
-        }
+      
+
+    
+
     }
 }

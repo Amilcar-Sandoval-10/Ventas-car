@@ -89,8 +89,7 @@ namespace Presentacion
                             {
                                 MessageBox.Show("Bienvenido", txtusuario.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 Frm_Presentacion Presentacion = new Frm_Presentacion();
-                                Presentacion.btn_compra.Enabled = true;
-                                Presentacion.btn_Proveedores.Enabled = true;
+                                Presentacion.Panel_menu.Enabled = true;
 
                                 Presentacion.Show();
                                 this.Hide();
@@ -110,6 +109,7 @@ namespace Presentacion
                             {
                                 MessageBox.Show("Bienvenido", txtusuario.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 Frm_Presentacion Presentacion = new Frm_Presentacion();
+                                Presentacion.btn_ventas.Enabled = true;
                                 Presentacion.Show();
                                
                                 this.Hide();
