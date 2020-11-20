@@ -37,7 +37,7 @@ namespace Presentacion
             try
             {
                 N_Inventario nInventario = new N_Inventario();
-                dgvFiltroInventario.DataSource = nInventario.ListaInventario();
+                dgvFiltroInventario.DataSource = nInventario.Listainventario();
 
             }
             catch (Exception ex)

@@ -330,8 +330,7 @@ namespace Presentacion
             this.Hide();
             this.Close();
 
-            Frm_Presentacion frm = new Frm_Presentacion();
-            frm.Panel_menu.Enabled = true;
+           
         }
     }
 }

@@ -33,7 +33,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.PanelInventario = new System.Windows.Forms.Panel();
             this.txt_Email = new System.Windows.Forms.TextBox();
+            this.txt_Telefono_personal = new System.Windows.Forms.TextBox();
+            this.txt_Telefono_empresa = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.txt_Cedula = new System.Windows.Forms.TextBox();
             this.txt_Nombres = new System.Windows.Forms.TextBox();
             this.txt_Apellidos = new System.Windows.Forms.TextBox();
@@ -41,6 +45,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.Btn_Cerrar = new System.Windows.Forms.Button();
             this.btn_Eliminar = new System.Windows.Forms.Button();
             this.btn_Cancelar = new System.Windows.Forms.Button();
             this.btn_Nuevo = new System.Windows.Forms.Button();
@@ -50,11 +55,6 @@
             this.txtfiltro = new System.Windows.Forms.TextBox();
             this.btnFiltroProveedor = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.Btn_Cerrar = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txt_Telefono_empresa = new System.Windows.Forms.TextBox();
-            this.txt_Telefono_personal = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvproveedor)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.PanelInventario.SuspendLayout();
@@ -108,6 +108,24 @@
             this.txt_Email.Size = new System.Drawing.Size(206, 26);
             this.txt_Email.TabIndex = 37;
             // 
+            // txt_Telefono_personal
+            // 
+            this.txt_Telefono_personal.Enabled = false;
+            this.txt_Telefono_personal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txt_Telefono_personal.Location = new System.Drawing.Point(646, 46);
+            this.txt_Telefono_personal.Name = "txt_Telefono_personal";
+            this.txt_Telefono_personal.Size = new System.Drawing.Size(206, 26);
+            this.txt_Telefono_personal.TabIndex = 35;
+            // 
+            // txt_Telefono_empresa
+            // 
+            this.txt_Telefono_empresa.Enabled = false;
+            this.txt_Telefono_empresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.txt_Telefono_empresa.Location = new System.Drawing.Point(646, 107);
+            this.txt_Telefono_empresa.Name = "txt_Telefono_empresa";
+            this.txt_Telefono_empresa.Size = new System.Drawing.Size(206, 26);
+            this.txt_Telefono_empresa.TabIndex = 36;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -118,6 +136,28 @@
             this.label6.Size = new System.Drawing.Size(71, 18);
             this.label6.TabIndex = 34;
             this.label6.Text = "Email  :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(425, 111);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(166, 18);
+            this.label5.TabIndex = 33;
+            this.label5.Text = "Telefono empresa :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(425, 50);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(168, 18);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "Telefono personal :";
             // 
             // txt_Cedula
             // 
@@ -194,6 +234,22 @@
             this.groupBox2.TabIndex = 26;
             this.groupBox2.TabStop = false;
             // 
+            // Btn_Cerrar
+            // 
+            this.Btn_Cerrar.BackColor = System.Drawing.Color.White;
+            this.Btn_Cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Btn_Cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Cerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.Btn_Cerrar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Cerrar.Image")));
+            this.Btn_Cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Btn_Cerrar.Location = new System.Drawing.Point(799, 19);
+            this.Btn_Cerrar.Name = "Btn_Cerrar";
+            this.Btn_Cerrar.Size = new System.Drawing.Size(109, 37);
+            this.Btn_Cerrar.TabIndex = 185;
+            this.Btn_Cerrar.Text = "Cerrar";
+            this.Btn_Cerrar.UseVisualStyleBackColor = false;
+            this.Btn_Cerrar.Click += new System.EventHandler(this.Btn_Cerrar_Click);
+            // 
             // btn_Eliminar
             // 
             this.btn_Eliminar.BackColor = System.Drawing.Color.White;
@@ -235,7 +291,7 @@
             this.btn_Nuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btn_Nuevo.Image = ((System.Drawing.Image)(resources.GetObject("btn_Nuevo.Image")));
             this.btn_Nuevo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Nuevo.Location = new System.Drawing.Point(278, 19);
+            this.btn_Nuevo.Location = new System.Drawing.Point(10, 19);
             this.btn_Nuevo.Name = "btn_Nuevo";
             this.btn_Nuevo.Size = new System.Drawing.Size(109, 37);
             this.btn_Nuevo.TabIndex = 159;
@@ -251,7 +307,7 @@
             this.btn_Modificar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btn_Modificar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Modificar.Image")));
             this.btn_Modificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Modificar.Location = new System.Drawing.Point(138, 19);
+            this.btn_Modificar.Location = new System.Drawing.Point(275, 19);
             this.btn_Modificar.Name = "btn_Modificar";
             this.btn_Modificar.Size = new System.Drawing.Size(109, 37);
             this.btn_Modificar.TabIndex = 182;
@@ -268,7 +324,7 @@
             this.btn_Guardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btn_Guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_Guardar.Image")));
             this.btn_Guardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Guardar.Location = new System.Drawing.Point(6, 19);
+            this.btn_Guardar.Location = new System.Drawing.Point(144, 19);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(109, 37);
             this.btn_Guardar.TabIndex = 157;
@@ -321,62 +377,6 @@
             this.label7.Size = new System.Drawing.Size(199, 18);
             this.label7.TabIndex = 43;
             this.label7.Text = "Buscador por Nombre :";
-            // 
-            // Btn_Cerrar
-            // 
-            this.Btn_Cerrar.BackColor = System.Drawing.Color.White;
-            this.Btn_Cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btn_Cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Cerrar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.Btn_Cerrar.Image = ((System.Drawing.Image)(resources.GetObject("Btn_Cerrar.Image")));
-            this.Btn_Cerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Btn_Cerrar.Location = new System.Drawing.Point(799, 19);
-            this.Btn_Cerrar.Name = "Btn_Cerrar";
-            this.Btn_Cerrar.Size = new System.Drawing.Size(109, 37);
-            this.Btn_Cerrar.TabIndex = 185;
-            this.Btn_Cerrar.Text = "Cerrar";
-            this.Btn_Cerrar.UseVisualStyleBackColor = false;
-            this.Btn_Cerrar.Click += new System.EventHandler(this.Btn_Cerrar_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(425, 50);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(168, 18);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "Telefono personal :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(425, 111);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(166, 18);
-            this.label5.TabIndex = 33;
-            this.label5.Text = "Telefono empresa :";
-            // 
-            // txt_Telefono_empresa
-            // 
-            this.txt_Telefono_empresa.Enabled = false;
-            this.txt_Telefono_empresa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txt_Telefono_empresa.Location = new System.Drawing.Point(646, 107);
-            this.txt_Telefono_empresa.Name = "txt_Telefono_empresa";
-            this.txt_Telefono_empresa.Size = new System.Drawing.Size(206, 26);
-            this.txt_Telefono_empresa.TabIndex = 36;
-            // 
-            // txt_Telefono_personal
-            // 
-            this.txt_Telefono_personal.Enabled = false;
-            this.txt_Telefono_personal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txt_Telefono_personal.Location = new System.Drawing.Point(646, 46);
-            this.txt_Telefono_personal.Name = "txt_Telefono_personal";
-            this.txt_Telefono_personal.Size = new System.Drawing.Size(206, 26);
-            this.txt_Telefono_personal.TabIndex = 35;
             // 
             // Frm_Proveedores
             // 

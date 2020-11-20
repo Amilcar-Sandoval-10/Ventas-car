@@ -31,3 +31,4 @@ C:\Users\josue\Desktop\venta_car\venta_car\Presentacion\obj\Debug\Presentacion.F
 C:\Users\josue\Desktop\venta_car\venta_car\Presentacion\obj\Debug\Presentacion.Frm_Buscardor_Clientes.resources
 C:\Users\josue\Desktop\venta_car\venta_car\Presentacion\obj\Debug\Presentacion.Frm_Ventas.resources
 C:\Users\josue\Desktop\venta_car\venta_car\Presentacion\obj\Debug\Presentacion.Frm_Buscador_Producto.resources
+C:\Users\josue\Desktop\venta_car\venta_car\Presentacion\obj\Debug\Presentacion.Frm_Inventario.resources

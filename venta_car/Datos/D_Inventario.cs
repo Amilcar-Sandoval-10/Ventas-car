@@ -76,14 +76,42 @@ namespace Datos
 
             }
 
-        public List<E_Inventario> Listainventario()
+     
+        public bool Eliminar(E_Inventario Eliminar_inventario)
+        {
+            try
+            {
+                SqlConnection Conexion = new SqlConnection(Properties.Settings.Default.Cadena_conexion);
+                SqlCommand Comando = new SqlCommand();
+
+                Comando.CommandType = CommandType.StoredProcedure;
+                Comando.CommandText = "Eliminar_inventario";
+                Comando.Parameters.AddWithValue("@Id_producto", Eliminar_inventario.Id_producto);
+                Comando.Connection = Conexion;
+                Conexion.Open();
+                Comando.ExecuteNonQuery();
+                Conexion.Close();
+
+                return true;
+
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+
+        public List<E_Inventario> ListainventarioBuscar()
         {
             try
             {
                 SqlConnection Conexion = new SqlConnection(Properties.Settings.Default.Cadena_conexion);
                 SqlCommand Comando = new SqlCommand();
                 Comando.CommandType = CommandType.StoredProcedure;
-                Comando.CommandText = "Mostrarinventario";
+                Comando.CommandText = "MostrarInventario";
                 Comando.Connection = Conexion;
                 Conexion.Open();
                 SqlDataReader leer = Comando.ExecuteReader();
@@ -112,74 +140,10 @@ namespace Datos
 
 
         }
-        public bool Eliminar(E_Inventario Eliminar_inventario)
-        {
-            try
-            {
-                SqlConnection Conexion = new SqlConnection(Properties.Settings.Default.Cadena_conexion);
-                SqlCommand Comando = new SqlCommand();
-
-                Comando.CommandType = CommandType.StoredProcedure;
-                Comando.CommandText = "Eliminar_inventario";
-                Comando.Parameters.AddWithValue("@Id_producto", Eliminar_inventario.Id_producto);
-                Comando.Connection = Conexion;
-                Conexion.Open();
-                Comando.ExecuteNonQuery();
-                Conexion.Close();
-
-                return true;
-
-            }
-
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-
-        }
 
 
-    }
 
-    public List<E_Inventario> ListaInventarioBuscar()
-        {
-            try
-            {
-                SqlConnection Conexion = new SqlConnection(Properties.Settings.Default.Cadena_conexion);
-                SqlCommand Comando = new SqlCommand();
-                Comando.CommandType = CommandType.StoredProcedure;
-                Comando.CommandText = "MostrarInventario";
-                Comando.Connection = Conexion;
-                Conexion.Open();
-                SqlDataReader leer = Comando.ExecuteReader();
-                List<E_Inventario> Lista = new List<E_Inventario>();
-                while (leer.Read())
-                {
-                    E_Inventario FilaInventario = new E_Inventario();
-                    FilaInventario.Id_producto = leer["Id_producto"].ToString();
-                    FilaInventario.Marca = leer["Marca"].ToString();
-                    FilaInventario.Modelo = leer["Modelo"].ToString();
-                    FilaInventario.Precio = Convert.ToInt32(leer["Precio"].ToString());
-               
-                    FilaInventario.Stock_max = Convert.ToInt32(leer["Stock_max"].ToString());
-                    FilaInventario.Stock_min = Convert.ToInt32(leer["Stock_min"].ToString());
-                    FilaInventario.Stock = Convert.ToInt32(leer["Stock"].ToString());
-                    
-
-                    Lista.Add(FilaInventario);
-                }
-                Conexion.Close();
-                return Lista;
-
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-        }
-
-        public DataTable ListaInventario()
+        public DataTable MostrarInventario()
         {
             DataTable Tabla = new DataTable();
             SqlConnection Conexion = new SqlConnection(Properties.Settings.Default.Cadena_conexion);
@@ -194,5 +158,11 @@ namespace Datos
             Conexion.Close();
             return Tabla;
         }
+
+
+
+    }
+
+
 
 }

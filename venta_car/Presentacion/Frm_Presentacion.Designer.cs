@@ -143,7 +143,7 @@
             this.Panel_menu.Name = "Panel_menu";
             this.Panel_menu.Size = new System.Drawing.Size(250, 728);
             this.Panel_menu.TabIndex = 5;
-            this.Panel_menu.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel_menu_Paint);
+
             // 
             // btn_provedores
             // 

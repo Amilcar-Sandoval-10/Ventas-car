@@ -78,7 +78,11 @@ namespace Presentacion
 
         private void btn_Inventario_Click(object sender, EventArgs e)
         {
-           
+            AbrirFormulario<Frm_Inventario>();
+            Panel_menu.Visible = true;
+            Panel_menu.Height = btn_ventas.Height;
+            Panel_menu.Top = btn_ventas.Top;
+
         }
 
         private void btn_Clientes_Click(object sender, EventArgs e)
@@ -116,13 +120,6 @@ namespace Presentacion
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void Panel_menu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-    
-   
 
     }
 }

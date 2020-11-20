@@ -7,70 +7,77 @@ using Datos;
 using Entidad;
 using System.Data;
 
+
 namespace Negocio
 {
    public class N_Inventario
     {
-  public bool Guardar(E_Inventario NuevoInventario)
+        public bool Guardar(E_Inventario Nuevo_inventario)
         {
-
             try
             {
+                D_Inventario NuevoInventario = new D_Inventario();
+                return NuevoInventario.Guardar(Nuevo_inventario);
 
-                E_Inventario DatosInventario = new E_Inventario();
-                return DatosInventario.Guardar(NuevoInventario);
             }
-
             catch (Exception ex)
             {
                 throw ex;
             }
-
         }
 
 
-        public bool Modificar(E_Inventario Editar_Inventario)
-
+        public bool Modificar(E_Inventario Modificar_Inventario)
         {
-
             try
             {
+                D_Inventario ModificarInventario = new D_Inventario();
+                return ModificarInventario.Modificar(Modificar_Inventario);
 
-                E_Inventario DatosInventario = new E_Inventario();
-                return DatosInventario.Modificar(Editar_Inventario);
             }
-
             catch (Exception ex)
             {
                 throw ex;
             }
-
         }
 
         public bool Eliminar(E_Inventario Eliminar_Inventario)
-
         {
-
             try
             {
+                D_Inventario Eliminarnvenario = new D_Inventario();
+                return Eliminarnvenario.Eliminar(Eliminar_Inventario);
 
-                E_Inventario eliminar = new E_Inventario();
-                return eliminar.Eliminar(Eliminar_Inventario);
             }
-
             catch (Exception ex)
             {
                 throw ex;
             }
+        }
 
+
+
+
+        public DataTable Listainventario()
+        {
+            try
+            {
+                D_Inventario  Datos = new D_Inventario();
+                return Datos.MostrarInventario();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
         public List<E_Inventario> ListaInventarioBuscar()
         {
             try
             {
-                D_Inventario DatosinventarioB = new D_Inventario();
-                return DatosinventarioB.ListaInventarioBuscar();
+                D_Inventario DatosProveedor = new D_Inventario();
+                return DatosProveedor.ListainventarioBuscar();
             }
             catch (Exception ex)
             {
@@ -79,19 +86,7 @@ namespace Negocio
             }
         }
 
-        public DataTable ListaInventario()
-        {
-            try
-            {
-                D_Inventario DatosInventario = new D_Inventario();
-                return DatosInventario.ListaInventario();
-            }
-            catch (Exception ex)
-            {
 
-                throw ex;
-            }
-        }
 
     }
 }

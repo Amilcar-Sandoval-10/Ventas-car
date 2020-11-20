@@ -61,6 +61,7 @@
             this.txtid.Name = "txtid";
             this.txtid.Size = new System.Drawing.Size(90, 23);
             this.txtid.TabIndex = 33;
+            this.txtid.TextChanged += new System.EventHandler(this.txtid_TextChanged);
             // 
             // cbid
             // 

@@ -41,7 +41,7 @@ namespace Presentacion
             try
             {
                 N_Inventario nInventario = new N_Inventario();
-                dgvFiltroInventario.DataSource = nInventario.ListaInventario();
+                dgvFiltroInventario.DataSource = nInventario.Listainventario();
 
             }
             catch (Exception ex)
@@ -147,6 +147,11 @@ namespace Presentacion
             Padre.txtPrecio.Text = dgvFiltroInventario.CurrentRow.Cells["Precio"].Value.ToString();
 
             this.Close();
+        }
+
+        private void txtid_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
