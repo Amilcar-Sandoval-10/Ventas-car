@@ -127,12 +127,12 @@
             this.dgvFiltroInventario.Size = new System.Drawing.Size(601, 177);
             this.dgvFiltroInventario.TabIndex = 41;
             this.dgvFiltroInventario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFiltroInventario_CellClick);
-          
             // 
             // Frm_Buscardor_Proveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(616, 309);
             this.Controls.Add(this.dgvFiltroInventario);
             this.Controls.Add(this.txtid);

@@ -11,6 +11,59 @@ namespace Negocio
 {
    public class N_Inventario
     {
+  public bool Guardar(E_Inventario NuevoInventario)
+        {
+
+            try
+            {
+
+                E_Inventario DatosInventario = new E_Inventario();
+                return DatosInventario.Guardar(NuevoInventario);
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+
+        public bool Modificar(E_Inventario Editar_Inventario)
+
+        {
+
+            try
+            {
+
+                E_Inventario DatosInventario = new E_Inventario();
+                return DatosInventario.Modificar(Editar_Inventario);
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
+
+        public bool Eliminar(E_Inventario Eliminar_Inventario)
+
+        {
+
+            try
+            {
+
+                E_Inventario eliminar = new E_Inventario();
+                return eliminar.Eliminar(Eliminar_Inventario);
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+        }
 
         public List<E_Inventario> ListaInventarioBuscar()
         {

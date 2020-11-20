@@ -48,22 +48,32 @@ namespace Presentacion
             Panel_menu.Visible = true;
             Panel_menu.Height = btn_compra.Height;
             Panel_menu.Top = btn_compra.Top;
+
         }
+
+
 
         private void btn_provedores_Click(object sender, EventArgs e)
         {
+
+
             AbrirFormulario<Frm_Proveedores>();
             Panel_menu.Visible = true;
             Panel_menu.Height = btn_provedores.Height;
             Panel_menu.Top = btn_provedores.Top;
+           
         }
 
         private void btn_ventas_Click(object sender, EventArgs e)
         {
+            
             AbrirFormulario<Frm_Ventas  >();
             Panel_menu.Visible = true;
             Panel_menu.Height = btn_ventas.Height;
             Panel_menu.Top = btn_ventas.Top;
+          
+
+
         }
 
         private void btn_Inventario_Click(object sender, EventArgs e)
@@ -105,5 +115,14 @@ namespace Presentacion
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void Panel_menu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+    
+   
+
     }
 }

@@ -45,7 +45,7 @@ namespace Presentacion
         }
 
 
-        private void btn_Nuevo_Click(object sender, EventArgs e)
+        private void btn_Nuevo_Click_1(object sender, EventArgs e)
         {
             Global.BotonesAccion(btn_Nuevo, btn_Guardar, btn_Modificar, btn_Eliminar, btn_Cancelar, btn_Limpiar, btn_Nuevo.Text);
             Global.Habilitar(PanelInventario);
@@ -54,7 +54,7 @@ namespace Presentacion
             btn_Modificar.Enabled = false;
         }
 
-        private void btn_Cancelar_Click(object sender, EventArgs e)
+        private void btn_Cancelar_Click_1(object sender, EventArgs e)
         {
             Global.BotonesAccion(btn_Nuevo, btn_Guardar, btn_Modificar, btn_Eliminar, btn_Cancelar, btn_Limpiar, btn_Nuevo.Text);
             Global.Desabilitar(PanelInventario);
@@ -65,15 +65,17 @@ namespace Presentacion
             btn_Cancelar.Enabled = false;
         }
 
-        private void btn_Limpiar_Click(object sender, EventArgs e)
-        {
-            Global.Limpiar(PanelInventario);
-         
-        }
 
-        private void btn_Guardar_Click(object sender, EventArgs e)
+        private void btn_Guardar_Click_1(object sender, EventArgs e)
         {
-         
+
+            if ((Global.ValidaTextBoxVacios(PanelInventario) == false))
+            {
+                MessageBox.Show("Necesita llenar todos los campos", "Compra", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                CargarGrid();
+            }
+            else
+            {
                 try
                 {
                     N_Proveedores nInventario = new N_Proveedores();
@@ -109,7 +111,6 @@ namespace Presentacion
                             MessageBox.Show("Se guardo exitosamente", "Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             CargarGrid();
                             Global.Limpiar(PanelInventario);
-                            //Global.BotonesAccion(btnNuevo, BtnGuardar, btnModificar, btnBuscar, btnCancelar, btnLimpiar, BtnGuardar.Text);
                         }
                     }
 
@@ -127,11 +128,14 @@ namespace Presentacion
 
                     MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+
+          
 
         }
             
 
-        private void btn_Modificar_Click(object sender, EventArgs e)
+        private void btn_Modificar_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -160,33 +164,6 @@ namespace Presentacion
             btn_Eliminar.Enabled = false;
         }
 
-        private void btn_Eliminar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (dgvproveedor.SelectedRows.Count > 0)
-                {
-                    txt_Nombres.Tag = dgvproveedor.CurrentRow.Cells["Id_proveedor"].Value.ToString();
-                    if (MessageBox.Show("Desea eliminar el proveedor seleccionada", "Proveedor", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
-                        N_Proveedores Eliminar = new N_Proveedores();
-                        E_Proveedores E_Eliminar = new E_Proveedores();
-
-                        E_Eliminar.Id_proveedor = txt_Nombres.Tag.ToString();
-
-                        if (Eliminar.Eliminar(E_Eliminar))
-                        {
-                            MessageBox.Show("Se Elimino Correctamente", "Proveedor", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            CargarGrid();
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
    
 
@@ -272,7 +249,89 @@ namespace Presentacion
             }
         }
 
-       
+   
+        private void btn_Limpiar_Click_1(object sender, EventArgs e)
+        {
+            Global.Limpiar(PanelInventario);
+        }
+
+        private void btnFiltroProveedor_Click(object sender, EventArgs e)
+        {
+         
+            try
+            {
+                N_Proveedores ListaProveedor = new N_Proveedores();
+                List<E_Proveedores> lista = ListaProveedor.ListaProveedorBuscar();
+
+                
+                    lista = lista.Where(l => l.Nombre.StartsWith(txtfiltro.Text)).ToList();
+
         
+                dgvproveedor.DataSource = lista;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        private void btn_Eliminar_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                if (dgvproveedor.SelectedRows.Count > 0)
+                {
+                    txt_Nombres.Tag = dgvproveedor.CurrentRow.Cells["Id_proveedor"].Value.ToString();
+                    if (MessageBox.Show("Desea eliminar el proveedor seleccionada", "Proveedor", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        N_Proveedores Eliminar = new N_Proveedores();
+                        E_Proveedores E_Eliminar = new E_Proveedores();
+
+                        E_Eliminar.Id_proveedor = txt_Nombres.Tag.ToString();
+
+                        if (Eliminar.Eliminar(E_Eliminar))
+                        {
+                            MessageBox.Show("Se Elimino Correctamente", "Proveedor", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            CargarGrid();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtfiltro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsLetter(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void Btn_Cerrar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
+
+            Frm_Presentacion frm = new Frm_Presentacion();
+            frm.Panel_menu.Enabled = true;
+        }
     }
 }
