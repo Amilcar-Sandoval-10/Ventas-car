@@ -28,7 +28,12 @@ namespace Presentacion
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult dialogo = MessageBox.Show("¿Desea cerrar el programa?",
+            "Cerrar el programa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogo == DialogResult.Yes)
+            {
+                Application.ExitThread();
+            }
         }
 
         private void cbcontraseña_CheckedChanged(object sender, EventArgs e)
@@ -99,8 +104,8 @@ namespace Presentacion
                             {
                                 MessageBox.Show("Bienvenido", txtusuario.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 Frm_Presentacion Presentacion = new Frm_Presentacion();
+                                Presentacion.Panel_menu.Enabled = true;
                                 Presentacion.Show();
-                                Presentacion.btn_compra.Enabled = true;     
 
                                 this.Hide();
                             }
@@ -110,10 +115,54 @@ namespace Presentacion
                                 MessageBox.Show("Bienvenido", txtusuario.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 Frm_Presentacion Presentacion = new Frm_Presentacion();
                                 Presentacion.btn_ventas.Enabled = true;
+                                Presentacion.btn_Clientes.Enabled = true;
+
+                                Presentacion.Btn_usuarios.Enabled = false;
+                                Presentacion.btn_compra.Enabled = false;
+                                Presentacion.btn_provedores.Enabled = false;
+                                Presentacion.btn_Inventario.Enabled = false;
                                 Presentacion.Show();
                                
                                 this.Hide();
                             }
+                            else if (cmbTipo.Text == "Comprador")
+                            {
+                                MessageBox.Show("Bienvenido", txtusuario.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                Frm_Presentacion Presentacion = new Frm_Presentacion();
+
+                                Presentacion.btn_Inventario.Enabled = false;
+                                Presentacion.btn_ventas.Enabled = false;
+                                Presentacion.btn_Clientes.Enabled = false;
+                                Presentacion.Btn_usuarios.Enabled = false;
+
+                                Presentacion.btn_compra.Enabled = true;
+                                Presentacion.btn_provedores.Enabled = true;
+                               
+
+                                Presentacion.Show();
+
+                                this.Hide();
+                            }
+
+                            else if (cmbTipo.Text == "Bodega")
+                            {
+                                MessageBox.Show("Bienvenido", txtusuario.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                Frm_Presentacion Presentacion = new Frm_Presentacion();
+
+                                Presentacion.btn_Inventario.Enabled = false;
+                                Presentacion.btn_ventas.Enabled = true;
+                                Presentacion.btn_Clientes.Enabled = false;
+                                Presentacion.Btn_usuarios.Enabled = false;
+
+                                Presentacion.btn_compra.Enabled = true;
+                                Presentacion.btn_provedores.Enabled = true;
+
+
+                                Presentacion.Show();
+
+                                this.Hide();
+                            }
+
 
                         }
                         else
