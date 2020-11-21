@@ -95,7 +95,13 @@ namespace Presentacion
             Panel_menu.Top = btn_ventas.Top;
 
         }
-
+        private void btn_Empleado_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Frm_Empleado>();
+            Panel_menu.Visible = true;
+            Panel_menu.Height = btn_ventas.Height;
+            Panel_menu.Top = btn_ventas.Top;
+        }
         private void Btn_usuarios_Click(object sender, EventArgs e)
         {
            
@@ -126,6 +132,6 @@ namespace Presentacion
             this.WindowState = FormWindowState.Minimized;
         }
 
-
+  
     }
 }

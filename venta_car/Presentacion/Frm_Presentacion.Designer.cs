@@ -43,6 +43,7 @@
             this.btn_ventas = new System.Windows.Forms.Button();
             this.btn_compra = new System.Windows.Forms.Button();
             this.btn_Inventario = new System.Windows.Forms.Button();
+            this.btn_Empleado = new System.Windows.Forms.Button();
             this.Panel_titulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.Panel_formularios.SuspendLayout();
@@ -130,6 +131,7 @@
             // Panel_menu
             // 
             this.Panel_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(41)))), ((int)(((byte)(68)))));
+            this.Panel_menu.Controls.Add(this.btn_Empleado);
             this.Panel_menu.Controls.Add(this.btn_provedores);
             this.Panel_menu.Controls.Add(this.pictureBox3);
             this.Panel_menu.Controls.Add(this.Btn_salir);
@@ -152,7 +154,7 @@
             this.btn_provedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_provedores.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_provedores.ForeColor = System.Drawing.Color.LightGray;
-            this.btn_provedores.Location = new System.Drawing.Point(0, 296);
+            this.btn_provedores.Location = new System.Drawing.Point(0, 276);
             this.btn_provedores.Name = "btn_provedores";
             this.btn_provedores.Size = new System.Drawing.Size(250, 40);
             this.btn_provedores.TabIndex = 9;
@@ -168,7 +170,7 @@
             this.Btn_salir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_salir.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_salir.ForeColor = System.Drawing.Color.LightGray;
-            this.Btn_salir.Location = new System.Drawing.Point(0, 644);
+            this.Btn_salir.Location = new System.Drawing.Point(0, 665);
             this.Btn_salir.Name = "Btn_salir";
             this.Btn_salir.Size = new System.Drawing.Size(247, 40);
             this.Btn_salir.TabIndex = 4;
@@ -184,7 +186,7 @@
             this.btn_Clientes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Clientes.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Clientes.ForeColor = System.Drawing.Color.LightGray;
-            this.btn_Clientes.Location = new System.Drawing.Point(3, 487);
+            this.btn_Clientes.Location = new System.Drawing.Point(3, 465);
             this.btn_Clientes.Name = "btn_Clientes";
             this.btn_Clientes.Size = new System.Drawing.Size(250, 40);
             this.btn_Clientes.TabIndex = 10;
@@ -200,7 +202,7 @@
             this.Btn_usuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btn_usuarios.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_usuarios.ForeColor = System.Drawing.Color.LightGray;
-            this.Btn_usuarios.Location = new System.Drawing.Point(3, 570);
+            this.Btn_usuarios.Location = new System.Drawing.Point(3, 590);
             this.Btn_usuarios.Name = "Btn_usuarios";
             this.Btn_usuarios.Size = new System.Drawing.Size(250, 40);
             this.Btn_usuarios.TabIndex = 6;
@@ -216,7 +218,7 @@
             this.btn_ventas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ventas.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ventas.ForeColor = System.Drawing.Color.LightGray;
-            this.btn_ventas.Location = new System.Drawing.Point(0, 362);
+            this.btn_ventas.Location = new System.Drawing.Point(0, 340);
             this.btn_ventas.Name = "btn_ventas";
             this.btn_ventas.Size = new System.Drawing.Size(250, 40);
             this.btn_ventas.TabIndex = 1;
@@ -232,7 +234,7 @@
             this.btn_compra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_compra.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_compra.ForeColor = System.Drawing.Color.LightGray;
-            this.btn_compra.Location = new System.Drawing.Point(0, 234);
+            this.btn_compra.Location = new System.Drawing.Point(0, 217);
             this.btn_compra.Name = "btn_compra";
             this.btn_compra.Size = new System.Drawing.Size(250, 40);
             this.btn_compra.TabIndex = 1;
@@ -248,13 +250,29 @@
             this.btn_Inventario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Inventario.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Inventario.ForeColor = System.Drawing.Color.LightGray;
-            this.btn_Inventario.Location = new System.Drawing.Point(3, 421);
+            this.btn_Inventario.Location = new System.Drawing.Point(3, 399);
             this.btn_Inventario.Name = "btn_Inventario";
             this.btn_Inventario.Size = new System.Drawing.Size(250, 40);
             this.btn_Inventario.TabIndex = 8;
             this.btn_Inventario.Text = "Inventario";
             this.btn_Inventario.UseVisualStyleBackColor = true;
             this.btn_Inventario.Click += new System.EventHandler(this.btn_Inventario_Click);
+            // 
+            // btn_Empleado
+            // 
+            this.btn_Empleado.FlatAppearance.BorderSize = 0;
+            this.btn_Empleado.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.btn_Empleado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
+            this.btn_Empleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Empleado.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Empleado.ForeColor = System.Drawing.Color.LightGray;
+            this.btn_Empleado.Location = new System.Drawing.Point(3, 526);
+            this.btn_Empleado.Name = "btn_Empleado";
+            this.btn_Empleado.Size = new System.Drawing.Size(250, 40);
+            this.btn_Empleado.TabIndex = 11;
+            this.btn_Empleado.Text = "Empleado";
+            this.btn_Empleado.UseVisualStyleBackColor = true;
+            this.btn_Empleado.Click += new System.EventHandler(this.btn_Empleado_Click);
             // 
             // Frm_Presentacion
             // 
@@ -291,5 +309,6 @@
         public System.Windows.Forms.Button btn_compra;
         public System.Windows.Forms.Button btn_Inventario;
         public System.Windows.Forms.Panel Panel_menu;
+        public System.Windows.Forms.Button btn_Empleado;
     }
 }
