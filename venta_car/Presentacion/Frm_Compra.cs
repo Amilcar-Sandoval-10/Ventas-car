@@ -195,7 +195,7 @@ namespace Presentacion
         private void Btn_Cerrar_Click(object sender, EventArgs e)
         {
             Frm_Presentacion frm = new Frm_Presentacion();
-            frm.Panel_menu.Enabled = false;
+            frm.Panel_menu.Enabled = true;
 
             this.Hide();
             this.Close();

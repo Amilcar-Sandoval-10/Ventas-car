@@ -12,6 +12,49 @@ namespace Negocio
    public class N_Cliente
     {
 
+
+        public bool Guardar(E_Cliente NuevoCliente)
+        {
+            try
+            {
+                D_Cliente DatosClientes = new D_Cliente();
+                return DatosClientes.Guardar(NuevoCliente);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public bool Eliminar(E_Cliente EliminarCliente)
+        {
+            try
+            {
+                D_Cliente DatosClientes = new D_Cliente();
+                return DatosClientes.Eliminar(EliminarCliente);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public bool Editar(E_Cliente ModificarCliente)
+        {
+            try
+            {
+                D_Cliente DatosCliente = new D_Cliente();
+                return DatosCliente.Editar(ModificarCliente);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public List<E_Cliente> ListaBuscarCliente()
         {
             try

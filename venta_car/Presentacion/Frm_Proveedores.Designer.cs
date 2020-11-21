@@ -72,6 +72,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.PanelInventario);
+            this.groupBox1.Font = new System.Drawing.Font("Georgia", 12F, System.Drawing.FontStyle.Bold);
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(168, 389);
             this.groupBox1.Name = "groupBox1";

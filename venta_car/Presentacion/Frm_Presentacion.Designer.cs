@@ -143,7 +143,6 @@
             this.Panel_menu.Name = "Panel_menu";
             this.Panel_menu.Size = new System.Drawing.Size(250, 728);
             this.Panel_menu.TabIndex = 5;
-
             // 
             // btn_provedores
             // 
@@ -284,13 +283,13 @@
         internal System.Windows.Forms.Button btn_cerrar;
         private System.Windows.Forms.PictureBox pictureBox3;
         internal System.Windows.Forms.Panel Panel_formularios;
-        internal System.Windows.Forms.Panel Panel_menu;
-        internal System.Windows.Forms.Button btn_provedores;
         internal System.Windows.Forms.Button Btn_salir;
-        internal System.Windows.Forms.Button btn_Clientes;
-        internal System.Windows.Forms.Button Btn_usuarios;
-        internal System.Windows.Forms.Button btn_ventas;
-        internal System.Windows.Forms.Button btn_compra;
-        internal System.Windows.Forms.Button btn_Inventario;
+        public System.Windows.Forms.Button btn_provedores;
+        public System.Windows.Forms.Button btn_Clientes;
+        public System.Windows.Forms.Button Btn_usuarios;
+        public System.Windows.Forms.Button btn_ventas;
+        public System.Windows.Forms.Button btn_compra;
+        public System.Windows.Forms.Button btn_Inventario;
+        public System.Windows.Forms.Panel Panel_menu;
     }
 }
