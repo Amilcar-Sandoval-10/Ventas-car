@@ -40,6 +40,7 @@
             this.btn_Limpiar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panelInventario = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
             this.txt_Empresa = new System.Windows.Forms.TextBox();
             this.txt_Fecha = new System.Windows.Forms.MaskedTextBox();
             this.txt_Estado = new System.Windows.Forms.TextBox();
@@ -221,6 +222,7 @@
             // 
             // panelInventario
             // 
+            this.panelInventario.Controls.Add(this.button6);
             this.panelInventario.Controls.Add(this.txt_Empresa);
             this.panelInventario.Controls.Add(this.txt_Fecha);
             this.panelInventario.Controls.Add(this.txt_Estado);
@@ -249,6 +251,22 @@
             this.panelInventario.Name = "panelInventario";
             this.panelInventario.Size = new System.Drawing.Size(705, 316);
             this.panelInventario.TabIndex = 77;
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Transparent;
+            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.DarkGreen;
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.Location = new System.Drawing.Point(272, 26);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(54, 29);
+            this.button6.TabIndex = 69;
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // txt_Empresa
             // 
@@ -522,7 +540,6 @@
         private System.Windows.Forms.Button btn_Limpiar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panelInventario;
-        private System.Windows.Forms.TextBox txt_Empresa;
         private System.Windows.Forms.MaskedTextBox txt_Fecha;
         private System.Windows.Forms.TextBox txt_Estado;
         private System.Windows.Forms.TextBox txt_Email;
@@ -545,5 +562,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button6;
+        public System.Windows.Forms.TextBox txt_Empresa;
     }
 }

@@ -70,6 +70,12 @@
     <Compile Include="Frm_Buscardor_Proveedor.Designer.cs">
       <DependentUpon>Frm_Buscardor_Proveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm_BuscarEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_BuscarEmpresa.Designer.cs">
+      <DependentUpon>Frm_BuscarEmpresa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_Cliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Buscardor_Proveedor.resx">
       <DependentUpon>Frm_Buscardor_Proveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_BuscarEmpresa.resx">
+      <DependentUpon>Frm_BuscarEmpresa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_Cliente.resx">
       <DependentUpon>Frm_Cliente.cs</DependentUpon>

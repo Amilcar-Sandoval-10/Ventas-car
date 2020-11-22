@@ -45,6 +45,7 @@
     <Compile Include="E_Cliente.cs" />
     <Compile Include="E_Compra.cs" />
     <Compile Include="E_Empleado.cs" />
+    <Compile Include="E_Empresa.cs" />
     <Compile Include="E_Inventario.cs" />
     <Compile Include="E_Proveedores.cs" />
     <Compile Include="E_Usuario.cs" />

@@ -141,6 +141,7 @@ namespace Presentacion
 
         private void dgvFiltroInventario_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
+       
             Padre.txtMarca.Tag = dgvFiltroInventario.CurrentRow.Cells["Id_producto"].Value.ToString();
             Padre.txtMarca.Text = dgvFiltroInventario.CurrentRow.Cells["Marca"].Value.ToString();
             Padre.txtModelo.Text = dgvFiltroInventario.CurrentRow.Cells["Modelo"].Value.ToString();
@@ -150,6 +151,11 @@ namespace Presentacion
         }
 
         private void txtid_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvFiltroInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -325,5 +325,11 @@ namespace Presentacion
                 e.Handled = true;
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Frm_BuscarEmpresa filtroProducto = new Frm_BuscarEmpresa(this);
+            filtroProducto.ShowDialog();
+        }
     }
 }

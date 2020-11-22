@@ -895,3 +895,5 @@ select *from Venta
 go
 
 
+
+
