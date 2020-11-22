@@ -108,7 +108,7 @@ namespace Presentacion
 
         private void dgvFiltroInventario_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Padre.txt_Empresa.Text = dgvFiltroInventario.CurrentRow.Cells["Id_empresa0"].Value.ToString();
+            Padre.txt_Empresa.Text = dgvFiltroInventario.CurrentRow.Cells["Id_empresa"].Value.ToString();
  
             this.Close();
         }

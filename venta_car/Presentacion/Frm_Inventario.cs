@@ -134,25 +134,32 @@ namespace Presentacion
 
 
                 Global.BotonesAccion(btn_Nuevo, btn_añadir, btn_Modificar, Btn_quitar, btn_Cancelar, btn_Limpiar, btn_Nuevo.Text);
-                Global.Desabilitar(panel_inventario);
+            
                 Global.Limpiar(panel_inventario);
                 btn_añadir.Enabled = false;
                 btn_Nuevo.Enabled = true;
                 btn_Limpiar.Enabled = false;
                 btn_Cancelar.Enabled = false;
+                Global.Desabilitar(panel_inventario);
+             
+
 
             }
         }
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
+            Global.BotonesAccion(btn_Nuevo, btn_añadir, btn_Modificar, btn_Limpiar, btn_Cancelar, btn_Limpiar, btn_Nuevo.Text);
+            Global.Desabilitar(panel_inventario);
+            Global.Limpiar(panel_inventario);
+
             btn_añadir.Enabled = false;
-            btn_Modificar.Enabled = true;
-            btn_Cancelar.Enabled = false;
-            Btn_quitar.Enabled = true;
             btn_Nuevo.Enabled = true;
-            panel_inventario.Enabled = false;
+            btn_Limpiar.Enabled = false;
+            btn_Cancelar.Enabled = false;
+
         }
+
 
         private void btn_Limpiar_Click(object sender, EventArgs e)
         {
@@ -183,12 +190,12 @@ namespace Presentacion
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);//ESto es por si hay un error
 
             }
-            
+
 
             Global.BotonesAccion(btn_Nuevo, btn_añadir, btn_Modificar, Btn_quitar, btn_Cancelar, btn_Limpiar, btn_Nuevo.Text);
             Global.Habilitar(panel_inventario);
             txt_marca.Focus();
-            btn_añadir.Enabled = false;
+            Btn_quitar.Enabled = false;
 
         }
 
@@ -214,17 +221,7 @@ namespace Presentacion
                             MessageBox.Show("Se elimino correctamente", "Inventario", MessageBoxButtons.OK, MessageBoxIcon.Information);
                      
                             CargarGrid();
-                            txt_marca.Clear();
-                            txt_modelo.Clear();
-                            txt_precio.Clear();
-                            txt_Stock_max.Clear();
-                            txt_Stock_min.Clear();
-                            txt_Stock.Clear();
-
-                            btn_añadir.Enabled = false;
-                            btn_Modificar.Enabled = false;
-                            Btn_quitar.Enabled = false;
-                            panel_inventario.Enabled = false;
+                           
                         }
 
                     }
@@ -244,6 +241,18 @@ namespace Presentacion
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            txt_marca.Clear();
+            txt_modelo.Clear();
+            txt_precio.Clear();
+            txt_Stock_max.Clear();
+            txt_Stock_min.Clear();
+            txt_Stock.Clear();
+
+            btn_añadir.Enabled = false;
+            btn_Modificar.Enabled = false;
+            Btn_quitar.Enabled = false;
+            panel_inventario.Enabled = false;
         }
 
         private void Btn_Cerrar_Click(object sender, EventArgs e)

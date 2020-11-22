@@ -49,7 +49,7 @@ namespace Presentacion
             Panel_menu.Height = btn_compra.Height;
             Panel_menu.Top = btn_compra.Top;
 
-            Panel_menu.Enabled = false;
+        
 
         }
 
@@ -87,6 +87,14 @@ namespace Presentacion
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AbrirFormulario<Frm_Empresa>();
+            Panel_menu.Visible = true;
+            Panel_menu.Height = btn_ventas.Height;
+            Panel_menu.Top = btn_ventas.Top;
+
+        }
         private void btn_Clientes_Click(object sender, EventArgs e)
         {
             AbrirFormulario<Frm_Cliente>();
@@ -132,6 +140,6 @@ namespace Presentacion
             this.WindowState = FormWindowState.Minimized;
         }
 
-  
+     
     }
 }

@@ -894,6 +894,41 @@ as
 select *from Venta  
 go
 
+select*from Usuario
+
+Create trigger InsertarCompra
+on Compra
+for insert
+as
+set nocount on
+begin
+declare @Cantidad int
+declare @ID int
+select @Cantidad =Cantidad from inserted
+Select @ID= Id_Producto From inserted
+Update Inventario set Stock=(Inventario.Stock + (@Cantidad)) 
+where Id_producto = (@ID)
+end
+go
 
 
 
+select * from Compra
+select * from Inventario
+select * from Venta
+
+
+create trigger InsertarVenta
+on Venta
+for insert
+as
+set nocount on
+begin
+declare @Cantidad int
+declare @ID int
+select @Cantidad = stock from inserted
+Select @ID= Id_venta From inserted
+Update Inventario set Stock=(Inventario.Stock - (@Cantidad)) 
+where Id_producto = (@ID)
+end
+go

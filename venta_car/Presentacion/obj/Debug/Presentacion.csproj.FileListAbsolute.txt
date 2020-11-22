@@ -35,3 +35,4 @@ C:\Users\josue\Desktop\venta_car\venta_car\Presentacion\obj\Debug\Presentacion.F
 C:\Users\josue\Desktop\venta_car\venta_car\Presentacion\obj\Debug\Presentacion.Frm_Cliente.resources
 C:\Users\josue\Desktop\venta_car\venta_car\Presentacion\obj\Debug\Presentacion.Frm_Empleado.resources
 C:\Users\josue\Desktop\venta_car\venta_car\Presentacion\obj\Debug\Presentacion.Frm_BuscarEmpresa.resources
+C:\Users\josue\Desktop\venta_car\venta_car\Presentacion\obj\Debug\Presentacion.Frm_Empresa.resources

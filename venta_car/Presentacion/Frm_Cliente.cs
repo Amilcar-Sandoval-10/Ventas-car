@@ -79,8 +79,8 @@ namespace Presentacion
                         E_Cliente modificarClientes = new E_Cliente();
                         modificarClientes.Id_cliente = txt_cedula.Tag.ToString();
                         modificarClientes.No_cedula = txt_cedula.Text;
-                        modificarClientes.Nombre = txt_cedula.Text;
-                        modificarClientes.Apellido = txt_cedula.Text;
+                        modificarClientes.Nombre = txt_nombre.Text;
+                        modificarClientes.Apellido = txt_apellido.Text;
                         modificarClientes.Telefono = Convert.ToInt32(txt_telefono.Text);
                         modificarClientes.Direccion = txt_direccion.Text;
                         modificarClientes.Ciudad = txt_ciudad.Text;
@@ -100,8 +100,8 @@ namespace Presentacion
                     {
                         E_Cliente GuardarClientes = new E_Cliente();
                         GuardarClientes.No_cedula = txt_cedula.Text;
-                        GuardarClientes.Nombre = txt_cedula.Text;
-                        GuardarClientes.Apellido = txt_cedula.Text;
+                        GuardarClientes.Nombre = txt_nombre.Text;
+                        GuardarClientes.Apellido = txt_apellido.Text;
                         GuardarClientes.Telefono = Convert.ToInt32(txt_telefono.Text);
                         GuardarClientes.Direccion = txt_direccion.Text;
                         GuardarClientes.Ciudad = txt_ciudad.Text;
