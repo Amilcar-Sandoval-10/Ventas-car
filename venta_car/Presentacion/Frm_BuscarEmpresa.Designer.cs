@@ -45,6 +45,7 @@
             this.dgvFiltroInventario.Size = new System.Drawing.Size(573, 183);
             this.dgvFiltroInventario.TabIndex = 50;
             this.dgvFiltroInventario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFiltroInventario_CellClick);
+            this.dgvFiltroInventario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFiltroInventario_CellContentClick);
             // 
             // txtnombre
             // 

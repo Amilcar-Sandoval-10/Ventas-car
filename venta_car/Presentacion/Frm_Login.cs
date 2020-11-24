@@ -82,7 +82,8 @@ namespace Presentacion
                     E_Usuario Acceso = new E_Usuario
                     {
                         Usuario = txtusuario.Text,
-                        Contraseña = txtcontraseña.Text
+                        Contraseña = txtcontraseña.Text,
+                        Tipo_Usuario = cmbTipo.Text
                     };
 
                     N_Usuario n_Usuario = new N_Usuario();
@@ -99,7 +100,7 @@ namespace Presentacion
                                 Presentacion.Show();
                                 this.Hide();
                             }
-                           
+
                             else if (cmbTipo.Text == "Gerente")
                             {
                                 MessageBox.Show("Bienvenido", txtusuario.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -109,13 +110,16 @@ namespace Presentacion
 
                                 this.Hide();
                             }
-                   
+
                             else if (cmbTipo.Text == "Vendedor")
                             {
                                 MessageBox.Show("Bienvenido", txtusuario.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 Frm_Presentacion Presentacion = new Frm_Presentacion();
                                 Presentacion.btn_ventas.Enabled = true;
                                 Presentacion.btn_Clientes.Enabled = true;
+
+                                Presentacion.button1.Enabled = false;
+                                Presentacion.btn_Empleado.Enabled = false;
 
                                 Presentacion.Btn_usuarios.Enabled = false;
                                 Presentacion.btn_compra.Enabled = false;
@@ -134,6 +138,8 @@ namespace Presentacion
                                 Presentacion.btn_ventas.Enabled = false;
                                 Presentacion.btn_Clientes.Enabled = false;
                                 Presentacion.Btn_usuarios.Enabled = false;
+                                Presentacion.button1.Enabled = false;
+                                Presentacion.btn_Empleado.Enabled = false;
 
                                 Presentacion.btn_compra.Enabled = true;
                                 Presentacion.btn_provedores.Enabled = true;
@@ -153,7 +159,9 @@ namespace Presentacion
                                 Presentacion.btn_ventas.Enabled = true;
                                 Presentacion.btn_Clientes.Enabled = false;
                                 Presentacion.Btn_usuarios.Enabled = false;
+                                Presentacion.button1.Enabled = false;
 
+                                Presentacion.btn_Empleado.Enabled = false;
                                 Presentacion.btn_compra.Enabled = true;
                                 Presentacion.btn_provedores.Enabled = true;
 

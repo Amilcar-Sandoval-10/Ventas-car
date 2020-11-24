@@ -120,6 +120,7 @@ namespace Datos
                 Comando.CommandText = "AccesoUsuario";
                 Comando.Parameters.AddWithValue("@usuario", AccesoUsuario.Usuario);
                 Comando.Parameters.AddWithValue("@contraseña", AccesoUsuario.Contraseña);
+                Comando.Parameters.AddWithValue("@Tipo_usuario ", AccesoUsuario.Tipo_Usuario);
                 Comando.Connection = Conexion;
                 Conexion.Open();
                 SqlDataReader leer = Comando.ExecuteReader();

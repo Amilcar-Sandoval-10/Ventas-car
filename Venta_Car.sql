@@ -360,6 +360,7 @@ drop proc Buscar_Usuario
 end
 go
 
+
 Create proc Buscar_Usuario    ---Good------
 @Id_Usuario int
 as
@@ -373,9 +374,10 @@ go
 
 create proc AccesoUsuario
 @usuario  Nvarchar (20),
-@contraseña  Nvarchar (20)
+@contraseña  Nvarchar (20),
+@Tipo_usuario  Nvarchar (20)
 as
-select * from Usuario where Usuario = @usuario and Contraseña = @contraseña
+select * from Usuario where Usuario = @usuario and Contraseña = @contraseña and Tipo_usuario = @Tipo_usuario
 
 
 
@@ -894,7 +896,7 @@ as
 select *from Venta  
 go
 
-select*from Usuario
+
 
 Create trigger InsertarCompra
 on Compra
