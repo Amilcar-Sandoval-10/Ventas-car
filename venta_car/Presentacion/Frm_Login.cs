@@ -28,12 +28,7 @@ namespace Presentacion
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            DialogResult dialogo = MessageBox.Show("¿Desea cerrar el programa?",
-            "Cerrar el programa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dialogo == DialogResult.Yes)
-            {
-                Application.ExitThread();
-            }
+          
         }
 
         private void cbcontraseña_CheckedChanged(object sender, EventArgs e)
@@ -58,9 +53,10 @@ namespace Presentacion
             cmbTipo.ValueMember = "Id_Usuario";
         }
 
-        private void BtnAcceso_Click(object sender, EventArgs e)
-        {
 
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
             try
             {
                 if (txtusuario.Text == "")
@@ -126,7 +122,7 @@ namespace Presentacion
                                 Presentacion.btn_provedores.Enabled = false;
                                 Presentacion.btn_Inventario.Enabled = false;
                                 Presentacion.Show();
-                               
+
                                 this.Hide();
                             }
                             else if (cmbTipo.Text == "Comprador")
@@ -143,7 +139,7 @@ namespace Presentacion
 
                                 Presentacion.btn_compra.Enabled = true;
                                 Presentacion.btn_provedores.Enabled = true;
-                               
+
 
                                 Presentacion.Show();
 
@@ -195,6 +191,23 @@ namespace Presentacion
 
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+
+        }
+
+        private void btncerrar_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogo = MessageBox.Show("¿Desea cerrar el programa?",
+          "Cerrar el programa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialogo == DialogResult.Yes)
+            {
+                Application.ExitThread();
+            }
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
