@@ -7,3 +7,12 @@ C:\Users\josue\Desktop\venta_car\venta_car\Datos\obj\Debug\Datos.csprojAssemblyR
 C:\Users\josue\Desktop\venta_car\venta_car\Datos\obj\Debug\Datos.csproj.CopyComplete
 C:\Users\josue\Desktop\venta_car\venta_car\Datos\obj\Debug\Datos.dll
 C:\Users\josue\Desktop\venta_car\venta_car\Datos\obj\Debug\Datos.pdb
+C:\Users\josue\Desktop\Completo-VentaCar\venta_car\venta_car\Datos\bin\Debug\Datos.dll.config
+C:\Users\josue\Desktop\Completo-VentaCar\venta_car\venta_car\Datos\bin\Debug\Datos.dll
+C:\Users\josue\Desktop\Completo-VentaCar\venta_car\venta_car\Datos\bin\Debug\Datos.pdb
+C:\Users\josue\Desktop\Completo-VentaCar\venta_car\venta_car\Datos\bin\Debug\Entidad.dll
+C:\Users\josue\Desktop\Completo-VentaCar\venta_car\venta_car\Datos\bin\Debug\Entidad.pdb
+C:\Users\josue\Desktop\Completo-VentaCar\venta_car\venta_car\Datos\obj\Debug\Datos.csprojAssemblyReference.cache
+C:\Users\josue\Desktop\Completo-VentaCar\venta_car\venta_car\Datos\obj\Debug\Datos.csproj.CopyComplete
+C:\Users\josue\Desktop\Completo-VentaCar\venta_car\venta_car\Datos\obj\Debug\Datos.dll
+C:\Users\josue\Desktop\Completo-VentaCar\venta_car\venta_car\Datos\obj\Debug\Datos.pdb

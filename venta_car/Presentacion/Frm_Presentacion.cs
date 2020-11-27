@@ -15,7 +15,40 @@ namespace Presentacion
         public Frm_Presentacion()
         {
             InitializeComponent();
+            PersonalizarDiseño();
         }
+
+
+        private void PersonalizarDiseño()
+        {
+            panePrincipalSubmenu.Visible = false;
+            panelInternasSubmenu.Visible = false;
+            panelExternasSubmenu.Visible = false;
+        }
+
+        private void OcultarSubmenu()
+        {
+            if (panePrincipalSubmenu.Visible == true)
+                panePrincipalSubmenu.Visible = false;
+            if (panelInternasSubmenu.Visible == true)
+                panelInternasSubmenu.Visible = false;
+            if (panelExternasSubmenu.Visible == true)
+                panelExternasSubmenu.Visible = false;
+        }
+
+        private void MostrarSubmenu(Panel subMenu)
+        {
+            if (subMenu.Visible == false)
+            {
+                OcultarSubmenu();
+                subMenu.Visible = true;
+            }
+            else
+            {
+                subMenu.Visible = false;
+            }
+        }
+
 
         //Metodo para abrir formulario dentro del panel
         private void AbrirFormulario<MiForm>() where MiForm : Form, new()
@@ -49,7 +82,7 @@ namespace Presentacion
             Panel_menu.Height = btn_compra.Height;
             Panel_menu.Top = btn_compra.Top;
 
-        
+            OcultarSubmenu();
 
         }
 
@@ -63,7 +96,9 @@ namespace Presentacion
             Panel_menu.Visible = true;
             Panel_menu.Height = btn_provedores.Height;
             Panel_menu.Top = btn_provedores.Top;
-           
+
+            OcultarSubmenu();
+
         }
 
         private void btn_ventas_Click(object sender, EventArgs e)
@@ -73,7 +108,9 @@ namespace Presentacion
             Panel_menu.Visible = true;
             Panel_menu.Height = btn_ventas.Height;
             Panel_menu.Top = btn_ventas.Top;
-          
+
+            OcultarSubmenu();
+
 
 
         }
@@ -85,6 +122,8 @@ namespace Presentacion
             Panel_menu.Height = btn_ventas.Height;
             Panel_menu.Top = btn_ventas.Top;
 
+            OcultarSubmenu();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -94,6 +133,8 @@ namespace Presentacion
             Panel_menu.Height = btn_ventas.Height;
             Panel_menu.Top = btn_ventas.Top;
 
+            OcultarSubmenu();
+
         }
         private void btn_Clientes_Click(object sender, EventArgs e)
         {
@@ -102,6 +143,8 @@ namespace Presentacion
             Panel_menu.Height = btn_ventas.Height;
             Panel_menu.Top = btn_ventas.Top;
 
+            OcultarSubmenu();
+
         }
         private void btn_Empleado_Click(object sender, EventArgs e)
         {
@@ -109,6 +152,9 @@ namespace Presentacion
             Panel_menu.Visible = true;
             Panel_menu.Height = btn_ventas.Height;
             Panel_menu.Top = btn_ventas.Top;
+
+            OcultarSubmenu();
+
         }
         private void Btn_usuarios_Click(object sender, EventArgs e)
         {
@@ -140,6 +186,19 @@ namespace Presentacion
             this.WindowState = FormWindowState.Minimized;
         }
 
-     
+        private void btn_principal_Click(object sender, EventArgs e)
+        {
+            MostrarSubmenu(panePrincipalSubmenu);
+        }
+
+        private void btn_gestiones_Click(object sender, EventArgs e)
+        {
+            MostrarSubmenu(panelInternasSubmenu);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MostrarSubmenu(panelExternasSubmenu);
+        }
     }
 }

@@ -8,7 +8,7 @@ Id_empresa int primary key identity (1,1) not null,
 Nombre nvarchar (50) not null,
 Direccion nvarchar (max) not null,
 Telefono int not null,
---check(Telefono Like'[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')
+check(Telefono Like'[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')
 )
 go
 
@@ -25,7 +25,7 @@ Direccion Nvarchar (Max) not Null,
 No_cedula nvarchar (16) not null,
 check (No_cedula like '[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][A-Z]'),
 Telefono Nvarchar (15) not Null,
---check (Telefono like '[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'),
+check (Telefono like '[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'),
 Estado_civil Nvarchar (12) Not Null,
 Email Nvarchar (80) not Null
 )
@@ -63,7 +63,7 @@ check (No_cedula like '[0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9][0-9]-[0-9][0-9]
 Nombre nvarchar (18) not null,
 Apellido nvarchar (30) not null,
 Telefono int not null,
---check (Telefono like '[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'),
+check (Telefono like '[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'),
 Direccion nvarchar (MAX) not null,
 Ciudad nvarchar (25) not null,
 Email nvarchar (MAX)not null
@@ -76,13 +76,13 @@ create table Proveedores
 (
 Id_proveedor int primary key  identity (1,1)not null,
 No_cedula nvarchar (16)not null,
---check (No_cedula like '[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][A-Z]'),
+check (No_cedula like '[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9][A-Z]'),
 Nombre nvarchar (18) not null,
 Apellido nvarchar (18) not null,
 Telefono_personal int not null,
---check (Telefono_personal like '[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'),
+check (Telefono_personal like '[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'),
 Telefono_empresa int not null,
---check (Telefono_empresa like '[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'),
+check (Telefono_empresa like '[0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]'),
 Email nvarchar (MAX) not null
 )
 go
